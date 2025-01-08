@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import Editor from "@monaco-editor/react";
 import axios from "axios";
 import { useDeployContract,useSwitchChain,useAccount } from "wagmi";
+import JSZip from 'jszip';
+import { saveAs } from 'file-saver';
+
 const SolidityEditor = () => {
   const {deployContract} = useDeployContract()
   const { isConnected, address } = useAccount()
@@ -100,6 +103,182 @@ contract MyContract {
     const explorerUrl = `https://testnet.sonicscan.org/tx/${txHash}`
     window.open(explorerUrl, '_blank')
   }
+  const hardhatDownload = async() => {
+    const zip = new JSZip();
+    const packageJson = {
+      "name": "hardhat-project",
+      "version": "1.0.0",
+      "description": "Hardhat project with Ignition deployment",
+      "scripts": {
+        "deploy": "hardhat ignition deploy ./ignition/modules/deploy.js"
+      },
+      "dependencies": {
+        "hardhat": "^2.19.1",
+        "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+        "@nomicfoundation/hardhat-ignition": "^0.13.0"
+      }
+    };
+    const hardhatConfig = `
+    require("@nomicfoundation/hardhat-toolbox");
+    require("@nomicfoundation/hardhat-ignition");
+    
+    /** @type import('hardhat/config').HardhatUserConfig */
+    module.exports = {
+      solidity: "0.8.19",
+      networks: {
+        sonic: {
+          url: "https://testnet.sonicchain.com/rpc",
+          chainId: 57054
+        }
+      }
+    };`;
+    const ignitionModule = `
+    const { buildModule } = require("@nomicfoundation/hardhat-ignition/modules");
+    
+    module.exports = buildModule("MyContractDeployment", (m) => {
+      const contract = m.contract("MyContract");
+      return { contract };
+    });`;
+    zip.file("package.json", JSON.stringify(packageJson, null, 2));
+    zip.file("hardhat.config.js", hardhatConfig);
+    zip.file("contracts/MyContract.sol", code);
+    zip.file("ignition/modules/deploy.js", ignitionModule);
+     // Add README
+     const readme = `# Hardhat Project with Ignition
+
+     This project demonstrates using Hardhat with Ignition for deployments.
+     
+     ## Setup
+     
+     1. Install dependencies:
+     \`\`\`shell
+     npm install
+     \`\`\`
+     
+     2. Deploy using Ignition:
+     \`\`\`shell
+     npm run deploy
+     \`\`\`
+     
+     ## Networks
+     - Sonic Testnet (Chain ID: 57054)
+     `;
+     
+    zip.file("README.md", readme);
+    try {
+      const content = await zip.generateAsync({ type: "blob" });
+      saveAs(content, "hardhat-project.zip");
+    } catch (error) {
+      console.error("Error creating zip file:", error);
+    }
+     
+
+
+
+  }
+  const foundryDownload = async () => {
+    const zip = new JSZip();
+    
+    // Create foundry.toml
+    const foundryConfig = `[profile.default]
+  src = "src"
+  out = "out"
+  libs = ["lib"]
+  remappings = ['@openzeppelin/=lib/openzeppelin-contracts/']
+  
+  [rpc_endpoints]
+  sonic = "https://testnet.sonicchain.com/rpc"
+  
+  [etherscan]
+  sonic = { key = "" }`;
+  
+    // Create script file
+    const scriptFile = `// SPDX-License-Identifier: UNLICENSED
+  pragma solidity ^0.8.19;
+  
+  import "forge-std/Script.sol";
+  import "../src/MyContract.sol";
+  
+  contract DeployScript is Script {
+      function run() external {
+          uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
+          vm.startBroadcast(deployerPrivateKey);
+  
+          MyContract myContract = new MyContract();
+  
+          vm.stopBroadcast();
+      }
+  }`;
+  
+    // Create .env example
+    const envExample = `PRIVATE_KEY=
+  RPC_URL=https://testnet.sonicchain.com/rpc`;
+  
+    // Create README
+    const readme = `# Foundry Project
+  
+  ## Getting Started
+  
+  ### Requirements
+  - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  - [Foundry](https://getfoundry.sh/)
+  
+  ### Installation
+  
+  1. Clone this repository:
+  \`\`\`bash
+  git clone <repository>
+  cd <repository>
+  \`\`\`
+  
+  2. Install dependencies:
+  \`\`\`bash
+  forge install
+  \`\`\`
+  
+  3. Build the project:
+  \`\`\`bash
+  forge build
+  \`\`\`
+  
+  ### Deploy
+  
+  1. Copy \`.env.example\` to \`.env\` and fill in your private key:
+  \`\`\`bash
+  cp .env.example .env
+  \`\`\`
+  
+  2. Deploy to Sonic testnet:
+  \`\`\`bash
+  forge script script/Deploy.s.sol --rpc-url sonic --broadcast
+  \`\`\`
+  
+  ## Networks
+  - Sonic Testnet (Chain ID: 57054)`;
+  
+    // Add files to zip
+    zip.file("foundry.toml", foundryConfig);
+    zip.file("src/MyContract.sol", code);
+    zip.file("script/Deploy.s.sol", scriptFile);
+    zip.file(".env.example", envExample);
+    zip.file("README.md", readme);
+    
+    // Create .gitignore
+    const gitignore = `cache/
+  out/
+  .env
+  broadcast/`;
+    
+    zip.file(".gitignore", gitignore);
+  
+    // Generate and download zip
+    try {
+      const content = await zip.generateAsync({ type: "blob" });
+      saveAs(content, "foundry-project.zip");
+    } catch (error) {
+      console.error("Error creating zip file:", error);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6">
@@ -112,6 +291,12 @@ contract MyContract {
         </button>
         <button className="bg-green-500 px-4 py-2 rounded text-white font-bold hover:bg-green-400" onClick={contractDeployment}>
           Deploy
+        </button>
+        <button className="bg-yellow-500 px-4 py-2 rounded text-white font-bold hover:bg-green-400" onClick={hardhatDownload}>
+          Hardhat-D
+        </button>
+        <button className="bg-red-500 px-4 py-2 rounded text-white font-bold hover:bg-green-400" onClick={foundryDownload}>
+          Foundry-D
         </button>
       </div>
 

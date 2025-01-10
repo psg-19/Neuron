@@ -1,3 +1,6 @@
 [submodule "neuron/lib/forge-std"]
 	path = neuron/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "neuron/lib/openzeppelin-contracts"]
+	path = neuron/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts

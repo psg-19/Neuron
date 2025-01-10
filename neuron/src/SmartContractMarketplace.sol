@@ -38,7 +38,6 @@ contract SmartContractMarketplace is ERC721URIStorage, Ownable {
     }
     
     function accessContract(uint256 tokenId) public payable {
-        require(_exists(tokenId), "Contract does not exist");
         require(msg.value >= contractDetails[tokenId].usageFee, "Insufficient fee");
         
         address creator = contractDetails[tokenId].creator;
@@ -50,7 +49,6 @@ contract SmartContractMarketplace is ERC721URIStorage, Ownable {
     }
     
     function getContractDetails(uint256 tokenId) public view returns (address, string[] memory, uint256) {
-        require(_exists(tokenId), "Contract does not exist");
         ContractMetadata storage metadata = contractDetails[tokenId];
         return (metadata.creator, metadata.tags, metadata.usageFee);
     }

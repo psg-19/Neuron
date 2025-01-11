@@ -1,17 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Editor from "@monaco-editor/react";
 import axios from "axios";
-import { useDeployContract,useSwitchChain,useAccount } from "wagmi";
+import { useDeployContract, useSwitchChain, useAccount, usePublicClient } from "wagmi";
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
+import { resolveQuery } from "../ai/chat";
 
 const SolidityEditor = () => {
-  const {deployContract} = useDeployContract()
-  const { isConnected, address } = useAccount()
-  const { switchChain } = useSwitchChain()
-  const [txHash,setTxHash] = useState()
+  const { deployContract } = useDeployContract();
+  const { isConnected, address } = useAccount();
+  const { switchChain } = useSwitchChain();
+  const publicClient = usePublicClient();
 
+  // State variables
+  const [txHash, setTxHash] = useState();
+  const [contractAddress, setContractAddress] = useState("");
+  const [data, setData] = useState({}); // Stores only the data, e.g., {"myNumber": 0}
+  const [returnedVar, setReturnedVar] = useState(""); // Stores the name of the returned variable, e.g., "myNumber"
   const [code, setCode] = useState(`// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -26,17 +32,28 @@ contract MyContract {
         return myNumber;
     }
 }`);
-
   const [abi, setAbi] = useState("");
   const [bytecode, setBytecode] = useState("");
   const [compilationError, setCompilationError] = useState("");
+  const [functionInputs, setFunctionInputs] = useState({}); // New state for function arguments
+
+  // Track contract address after deployment
+  useEffect(() => {
+    const fetchContractAddress = async () => {
+      if (txHash) {
+        const receipt = await publicClient.waitForTransactionReceipt({ hash: txHash });
+        setContractAddress(receipt.contractAddress);
+      }
+    };
+    fetchContractAddress();
+  }, [txHash, publicClient]);
 
   // Handle editor changes
   const handleEditorChange = (value) => {
     setCode(value);
   };
 
-  // Call the API to compile Solidity code
+  // Compile Solidity code
   const handleCompile = async () => {
     setCompilationError("");
     try {
@@ -63,47 +80,36 @@ contract MyContract {
     }
   };
 
-  // Function to copy text to clipboard
-  const handleCopy = (text) => {
-    navigator.clipboard.writeText(text);
-    alert("Copied to clipboard!");
-  };
-  const contractDeployment=async()=>{
-    await switchChain({ chainId: 57054})
+  // Deploy contract
+  const contractDeployment = async () => {
+    await switchChain({ chainId: 57054 });
 
     const contract = deployContract(
       {
-      abi: abi,
-      bytecode: bytecode,
+        abi: JSON.parse(abi),
+        bytecode: bytecode,
       },
       {
         onError: (error) => {
-          console.error("Deployment error:", error)
-          toast.error("Contract deployment failed!")
+          console.error("Deployment error:", error);
+          alert("Contract deployment failed!");
         },
         onSuccess: (data) => {
-          console.log("Contract deployed successfully:", data)
-          console.log(`Transaction hash: ${data}`)
-          setTxHash(data)                     
-        },
-        onSettled: (data, error) => {
-          if (error) {
-            console.error("Transaction failed or was rejected:", error)
-          } else {
-            console.log("Transaction completed:", data)
-          }
+          console.log("Contract deployed successfully:", data);
+          setTxHash(data);
         },
       }
-     )
-          
+    );
+  };
 
-
-  }
+  // View transaction on explorer
   const viewOnExplorer = () => {
-    const explorerUrl = `https://testnet.sonicscan.org/tx/${txHash}`
-    window.open(explorerUrl, '_blank')
-  }
-  const hardhatDownload = async() => {
+    const explorerUrl = `https://testnet.sonicscan.org/tx/${txHash}`;
+    window.open(explorerUrl, '_blank');
+  };
+
+  // Generate Hardhat project
+  const hardhatDownload = async () => {
     const zip = new JSZip();
     const packageJson = {
       "name": "hardhat-project",
@@ -143,43 +149,20 @@ contract MyContract {
     zip.file("hardhat.config.js", hardhatConfig);
     zip.file("contracts/MyContract.sol", code);
     zip.file("ignition/modules/deploy.js", ignitionModule);
-     // Add README
-     const readme = `# Hardhat Project with Ignition
-
-     This project demonstrates using Hardhat with Ignition for deployments.
-     
-     ## Setup
-     
-     1. Install dependencies:
-     \`\`\`shell
-     npm install
-     \`\`\`
-     
-     2. Deploy using Ignition:
-     \`\`\`shell
-     npm run deploy
-     \`\`\`
-     
-     ## Networks
-     - Sonic Testnet (Chain ID: 57054)
-     `;
-     
+    const readme = `# Hardhat Project with Ignition`;
     zip.file("README.md", readme);
+
     try {
       const content = await zip.generateAsync({ type: "blob" });
       saveAs(content, "hardhat-project.zip");
     } catch (error) {
       console.error("Error creating zip file:", error);
     }
-     
+  };
 
-
-
-  }
+  // Generate Foundry project
   const foundryDownload = async () => {
     const zip = new JSZip();
-    
-    // Create foundry.toml
     const foundryConfig = `[profile.default]
   src = "src"
   out = "out"
@@ -191,8 +174,6 @@ contract MyContract {
   
   [etherscan]
   sonic = { key = "" }`;
-  
-    // Create script file
     const scriptFile = `// SPDX-License-Identifier: UNLICENSED
   pragma solidity ^0.8.19;
   
@@ -209,74 +190,90 @@ contract MyContract {
           vm.stopBroadcast();
       }
   }`;
-  
-    // Create .env example
     const envExample = `PRIVATE_KEY=
   RPC_URL=https://testnet.sonicchain.com/rpc`;
-  
-    // Create README
-    const readme = `# Foundry Project
-  
-  ## Getting Started
-  
-  ### Requirements
-  - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-  - [Foundry](https://getfoundry.sh/)
-  
-  ### Installation
-  
-  1. Clone this repository:
-  \`\`\`bash
-  git clone <repository>
-  cd <repository>
-  \`\`\`
-  
-  2. Install dependencies:
-  \`\`\`bash
-  forge install
-  \`\`\`
-  
-  3. Build the project:
-  \`\`\`bash
-  forge build
-  \`\`\`
-  
-  ### Deploy
-  
-  1. Copy \`.env.example\` to \`.env\` and fill in your private key:
-  \`\`\`bash
-  cp .env.example .env
-  \`\`\`
-  
-  2. Deploy to Sonic testnet:
-  \`\`\`bash
-  forge script script/Deploy.s.sol --rpc-url sonic --broadcast
-  \`\`\`
-  
-  ## Networks
-  - Sonic Testnet (Chain ID: 57054)`;
-  
-    // Add files to zip
+    const readme = `# Foundry Project`;
     zip.file("foundry.toml", foundryConfig);
     zip.file("src/MyContract.sol", code);
     zip.file("script/Deploy.s.sol", scriptFile);
     zip.file(".env.example", envExample);
     zip.file("README.md", readme);
-    
-    // Create .gitignore
     const gitignore = `cache/
   out/
   .env
   broadcast/`;
-    
     zip.file(".gitignore", gitignore);
-  
-    // Generate and download zip
+
     try {
       const content = await zip.generateAsync({ type: "blob" });
       saveAs(content, "foundry-project.zip");
     } catch (error) {
       console.error("Error creating zip file:", error);
+    }
+  };
+
+  // Handle function execution
+  const handleExecute = async (functionName) => {
+    const inputs = functionInputs[functionName] || '';
+    let temp = {
+      function: functionName,
+      args: inputs.split(',').map(arg => arg.trim())
+    };
+
+    try {
+      const response = await resolveQuery(data, temp, code);
+      const res = JSON.parse(response);
+      setData(res.data); // Update data with the res data, e.g., {"myNumber": 0}
+      setReturnedVar(res.return); // Update returnedVar with the name of the returned variable, e.g., "myNumber"
+    } catch (error) {
+      console.error("Error executing function:", error);
+      alert("Function execution failed!");
+    }
+  };
+
+  // Render contract functions
+  const renderContractFunctions = () => {
+    if (!contractAddress || !abi) return null;
+
+    try {
+      const parsedAbi = JSON.parse(abi);
+      return parsedAbi
+        .filter(item => item.type === "function")
+        .map((func, index) => (
+          <div key={index} className="mb-4 p-4 bg-gray-800 rounded-lg">
+            <div className="flex items-center gap-4">
+              <h3 className="text-lg font-semibold">{func.name}</h3>
+              
+              {func.inputs.length > 0 && (
+                <input
+                  type="text"
+                  placeholder={`Args: ${func.inputs.map(input => input.type).join(', ')}`}
+                  className="flex-1 p-2 bg-gray-700 rounded"
+                  value={functionInputs[func.name] || ''}
+                  onChange={(e) => setFunctionInputs(prev => ({
+                    ...prev,
+                    [func.name]: e.target.value
+                  }))}
+                />
+              )}
+
+              <button
+                onClick={() => handleExecute(func.name)}
+                className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-400"
+              >
+                Execute
+              </button>
+
+              {returnedVar && data[returnedVar] && (
+                <div className="mt-2 p-2 bg-gray-700 rounded">
+                  <span className="text-green-400">Response: {data[returnedVar]}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        ));
+    } catch (error) {
+      return <div className="text-red-500">Error loading functions</div>;
     }
   };
 
@@ -332,19 +329,21 @@ contract MyContract {
           <div className="flex items-center gap-2">
             <label className="text-yellow-400 font-bold">ABI:</label>
             <input type="text" readOnly value={abi} className="flex-1 bg-gray-700 p-2 rounded text-sm" />
-            <button onClick={() => handleCopy(abi)} className="bg-blue-500 px-3 py-1 rounded text-white hover:bg-blue-400">
+            <button onClick={() => navigator.clipboard.writeText(abi)} className="bg-blue-500 px-3 py-1 rounded text-white hover:bg-blue-400">
               Copy
             </button>
           </div>
           <div className="flex items-center gap-2 mt-2">
             <label className="text-yellow-400 font-bold">Bytecode:</label>
             <input type="text" readOnly value={bytecode} className="flex-1 bg-gray-700 p-2 rounded text-sm" />
-            <button onClick={() => handleCopy(bytecode)} className="bg-blue-500 px-3 py-1 rounded text-white hover:bg-blue-400">
+            <button onClick={() => navigator.clipboard.writeText(bytecode)} className="bg-blue-500 px-3 py-1 rounded text-white hover:bg-blue-400">
               Copy
             </button>
           </div>
         </div>
       )}
+
+      {/* Transaction Hash */}
       {txHash && (
         <div className="mt-4 p-4 bg-gray-800 rounded">
           <div className="flex items-center justify-between">
@@ -359,6 +358,14 @@ contract MyContract {
               </button>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Function testing section */}
+      {contractAddress && (
+        <div className="mt-8">
+          <h2 className="text-xl font-bold mb-4">Contract Functions</h2>
+          {renderContractFunctions()}
         </div>
       )}
     </div>

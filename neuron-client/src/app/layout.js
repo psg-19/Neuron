@@ -32,7 +32,7 @@ const sonic = {
 } 
 
 
-const config = getDefaultConfig({
+export const config = getDefaultConfig({
   appName: 'My RainbowKit App',
   projectId: 'YOUR_PROJECT_ID', // Replace with your WalletConnect project ID
   chains: [mainnet, polygon, optimism, arbitrum, base,sonic],

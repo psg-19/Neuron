@@ -1,4 +1,6 @@
-const definition: IContractDefinition = {
+
+
+const definition: any = {
   name: "DynamicAccount",
   description: `A dynamic account contract that allows for the delegation of execution permissions to other addresses. This contract can be used to implement a variety of use cases, such as multi-signature wallets, decentralized governance systems, and more.`,
   content: [

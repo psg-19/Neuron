@@ -90,7 +90,20 @@ import corerouter from "./unaudited/contract-builder/CoreRouter"
 import permissionoverride from "./unaudited/contract-builder/extension/PermissionOverride"
 import loyaltypoints from "./unaudited/loyalty/LoyaltyPoints"
 import voteerc20 from "./vote/VoteERC20"
-
+interface IContracts {
+  identifier: string
+  name: string
+  version: string
+  description: string
+  source: any
+  path: string
+}
+interface IContractStore {
+  identifier: string
+  name: string
+  description: string
+  contracts: IContracts[]
+}
 const ContractStore: IContractStore[] = [
   {
     identifier: "recommended",

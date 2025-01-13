@@ -11,7 +11,7 @@ const SolidityEditor = () => {
   const { deployContract } = useDeployContract();
   const { isConnected, address } = useAccount();
   const { switchChain } = useSwitchChain();
-  const publicClient = usePublicClient();
+  const publicClient = usePublicClient();//
 
   // State variables
   const [txHash, setTxHash] = useState();
@@ -46,7 +46,7 @@ contract MyContract {
       }
     };
     fetchContractAddress();
-  }, [txHash, publicClient]);
+  }, [txHash, publicClient]);//
 
   // Handle editor changes
   const handleEditorChange = (value) => {
@@ -86,7 +86,7 @@ contract MyContract {
 
     const contract = deployContract(
       {
-        abi: JSON.parse(abi),
+        abi:abi,
         bytecode: bytecode,
       },
       {

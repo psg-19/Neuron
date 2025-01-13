@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "Split",
   description: `The Split contract enables the division of funds between multiple recipients based on pre-defined proportions.`,
   content: [

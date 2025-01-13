@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "IERC6551Account",
   description: `Interface of the ERC-6551 Account standard, allowing contracts to interact with account-based smart contracts.`,
   content: [

@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "CoreRouter",
   description: `The CoreRouter contract acts as a central hub for interacting with various DeFi protocols. It allows users to seamlessly execute swaps, provide liquidity, and access other decentralized financial services in a secure and efficient manner. The contract leverages the power of aggregators to source the best prices across multiple decentralized exchanges (DEXs) and liquidity pools.`,
   content: [

@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "IPackVRFDirect",
   description: `Interface for VRFDirect contract.`,
   content: [

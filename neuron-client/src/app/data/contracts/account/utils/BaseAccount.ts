@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "BaseAccount",
   description: `The BaseAccount contract is a foundational component of the ecosystem, enabling the creation of secure and customizable accounts for various applications. It is designed to be flexible and extensible, allowing developers to incorporate diverse functionalities into their projects.`,
   content: [

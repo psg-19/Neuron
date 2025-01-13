@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "ERC6551AccountLib",
   description: `This library provides the core functionality for ERC6551 accounts, enabling smart contracts to act as independent entities with their own wallets and the ability to manage their own assets.`,
   content: [

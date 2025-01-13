@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "BurnToClaimDrop721Logic",
   description: `This contract is a logic contract for the BurnToClaimDrop721 contract. It allows users to burn a specified ERC20 token and claim a corresponding NFT from the BurnToClaimDrop721 contract.`,
   content: [

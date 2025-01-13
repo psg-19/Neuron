@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "NonceManager",
   description: `A contract that helps manage the nonce of a user. This is useful when interacting with a contract that relies on the user to provide their own nonce, as it can help prevent replay attacks.`,
   content: [

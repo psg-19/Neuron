@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "INonceManager",
   description: `Interface for managing nonces.`,
   content: [

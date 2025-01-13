@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "SenderCreator",
   description: `The SenderCreator contract allows users to create and manage sender accounts with specific permission levels. These accounts can be used to send transactions on behalf of the creator without exposing the creator's primary address.`,
   content: [

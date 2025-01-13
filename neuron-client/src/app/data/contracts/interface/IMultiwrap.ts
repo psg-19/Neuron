@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "IMultiwrap",
   description: `Interface for the Multiwrap contract`,
   content: [

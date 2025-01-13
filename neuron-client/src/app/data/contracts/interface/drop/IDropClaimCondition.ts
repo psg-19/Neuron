@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "IDropClaimCondition",
   description: `Interface for a claim condition that can be used to determine if a user can claim a drop`,
   content: [

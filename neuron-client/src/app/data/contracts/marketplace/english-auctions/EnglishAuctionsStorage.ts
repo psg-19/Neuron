@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "EnglishAuctionsStorage",
   description: `This contract stores the data for English Auctions. It stores the auction details, including the auction creator, the current highest bid, and the current highest bidder.`,
   content: [

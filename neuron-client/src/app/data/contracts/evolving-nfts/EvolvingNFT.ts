@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "EvolvingNFT",
   description: `A non-fungible token contract that allows for the evolution of its NFTs over time.`,
   content: [

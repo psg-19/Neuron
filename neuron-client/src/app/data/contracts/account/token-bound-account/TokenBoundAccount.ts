@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "TokenBoundAccount",
   description: `A contract that allows for the creation of accounts that are bound to a specific token. This enables applications to restrict access to certain features or resources based on token ownership.`,
   content: [

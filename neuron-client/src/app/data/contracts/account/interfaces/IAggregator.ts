@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "IAggregator",
   description: `Interface for aggregators of price feeds.`,
   content: [

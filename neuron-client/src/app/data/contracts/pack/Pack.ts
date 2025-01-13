@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "Pack",
   description: `The Pack contract allows users to create and manage packs of items. These packs can be used to represent real-world collections, such as trading cards, or digital items, such as NFTs.`,
   content: [

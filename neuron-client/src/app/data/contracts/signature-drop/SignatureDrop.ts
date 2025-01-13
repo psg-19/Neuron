@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "SignatureDrop",
   description: `A contract for minting NFTs with a signature-based whitelist.`,
   content: [

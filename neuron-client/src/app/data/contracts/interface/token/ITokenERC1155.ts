@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "ITokenERC1155",
   description: `Interface for the ERC1155 standard`,
   content: [

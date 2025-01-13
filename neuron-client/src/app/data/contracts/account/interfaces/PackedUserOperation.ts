@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "PackedUserOperation",
   description: `A packed user operation structure for use with the EntryPoint contract`,
   content: [

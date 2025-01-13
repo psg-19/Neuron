@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "INFTStake",
   description: `A contract for staking NFTs and earning rewards.`,
   content: [

@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "IPack",
   description: `Interface for a Pack contract`,
   content: [

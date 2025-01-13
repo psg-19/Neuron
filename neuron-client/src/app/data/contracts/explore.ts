@@ -111,7 +111,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/tokenerc20",
+        identifier: "neuron/tokenerc20",
         name: "TokenERC20",
         version: "1.1.1",
         description:
@@ -120,7 +120,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/token/TokenERC20",
       },
       {
-        identifier: "arc/tokenerc1155",
+        identifier: "neuron/tokenerc1155",
         name: "TokenERC1155",
         version: "3.0.6",
         description:
@@ -129,7 +129,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/token/TokenERC1155",
       },
       {
-        identifier: "arc/tokenerc721",
+        identifier: "neuron/tokenerc721",
         name: "TokenERC721",
         version: "0.5.6",
         description: "A basic ERC721 token contract. ",
@@ -137,7 +137,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/token/TokenERC721",
       },
       {
-        identifier: "arc/split",
+        identifier: "neuron/split",
         name: "Split",
         version: "2.3.2",
         description:
@@ -146,7 +146,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/split/Split",
       },
       {
-        identifier: "arc/voteerc20",
+        identifier: "neuron/voteerc20",
         name: "VoteERC20",
         version: "1.4.5",
         description: "A contract that allows voting on proposals using ERC20 tokens. ",
@@ -154,7 +154,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/vote/VoteERC20",
       },
       {
-        identifier: "arc/marketplacev3",
+        identifier: "neuron/marketplacev3",
         name: "MarketplaceV3",
         version: "0.6.3",
         description:
@@ -163,7 +163,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/marketplace/entrypoint/MarketplaceV3",
       },
       {
-        identifier: "arc/pack",
+        identifier: "neuron/pack",
         name: "Pack",
         version: "4.3.3",
         description:
@@ -172,7 +172,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/pack/Pack",
       },
       {
-        identifier: "arc/loyaltycard",
+        identifier: "neuron/loyaltycard",
         name: "LoyaltyCard",
         version: "4.1.0",
         description: "A Solidity contract that implements a loyalty card system. ",
@@ -180,7 +180,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/loyalty/LoyaltyCard",
       },
       {
-        identifier: "arc/droperc1155",
+        identifier: "neuron/droperc1155",
         name: "DropERC1155",
         version: "5.3.6",
         description: "An ERC-1155 contract that allows for the distribution of tokens to a list of recipients. ",
@@ -188,7 +188,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/drop/DropERC1155",
       },
       {
-        identifier: "arc/managedaccount",
+        identifier: "neuron/managedaccount",
         name: "ManagedAccount",
         version: "1.1.5",
         description: "A contract that allows for the management of an account by a designated manager. ",
@@ -196,7 +196,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/managed/ManagedAccount",
       },
       {
-        identifier: "arc/dynamicaccount",
+        identifier: "neuron/dynamicaccount",
         name: "DynamicAccount",
         version: "2.5.6",
         description:
@@ -205,7 +205,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/dynamic/DynamicAccount",
       },
       {
-        identifier: "arc/signaturedrop",
+        identifier: "neuron/signaturedrop",
         name: "SignatureDrop",
         version: "2.4.6",
         description: "A contract for minting NFTs with a signature-based whitelist. ",
@@ -213,7 +213,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/signature-drop/SignatureDrop",
       },
       {
-        identifier: "arc/inftstake",
+        identifier: "neuron/inftstake",
         name: "INFTStake",
         version: "5.1.5",
         description: "A contract for staking NFTs and earning rewards. ",
@@ -221,7 +221,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/staking/INFTStake",
       },
       {
-        identifier: "arc/airdroperc20",
+        identifier: "neuron/airdroperc20",
         name: "AirdropERC20",
         version: "4.6.5",
         description:
@@ -237,7 +237,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/tokenerc20",
+        identifier: "neuron/tokenerc20",
         name: "TokenERC20",
         version: "3.0.3",
         description:
@@ -246,7 +246,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/token/TokenERC20",
       },
       {
-        identifier: "arc/tokenerc1155",
+        identifier: "neuron/tokenerc1155",
         name: "TokenERC1155",
         version: "1.3.5",
         description:
@@ -255,7 +255,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/token/TokenERC1155",
       },
       {
-        identifier: "arc/tokenerc721",
+        identifier: "neuron/tokenerc721",
         name: "TokenERC721",
         version: "4.0.1",
         description: "A basic ERC721 token contract. ",
@@ -270,7 +270,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/split",
+        identifier: "neuron/split",
         name: "Split",
         version: "5.3.0",
         description:
@@ -286,7 +286,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/voteerc20",
+        identifier: "neuron/voteerc20",
         name: "VoteERC20",
         version: "4.5.2",
         description: "A contract that allows voting on proposals using ERC20 tokens. ",
@@ -301,7 +301,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/iloyaltycard",
+        identifier: "neuron/iloyaltycard",
         name: "ILoyaltyCard",
         version: "1.5.5",
         description: "Interface for a loyalty card contract. ",
@@ -309,7 +309,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/ILoyaltyCard",
       },
       {
-        identifier: "arc/iloyaltypoints",
+        identifier: "neuron/iloyaltypoints",
         name: "ILoyaltyPoints",
         version: "1.4.2",
         description: "Interface for LoyaltyPoints contract. ",
@@ -317,7 +317,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/ILoyaltyPoints",
       },
       {
-        identifier: "arc/imultiwrap",
+        identifier: "neuron/imultiwrap",
         name: "IMultiwrap",
         version: "5.3.0",
         description: "Interface for the Multiwrap contract ",
@@ -325,7 +325,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/IMultiwrap",
       },
       {
-        identifier: "arc/ipack",
+        identifier: "neuron/ipack",
         name: "IPack",
         version: "1.0.0",
         description: "Interface for a Pack contract ",
@@ -333,7 +333,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/IPack",
       },
       {
-        identifier: "arc/ipackvrfdirect",
+        identifier: "neuron/ipackvrfdirect",
         name: "IPackVRFDirect",
         version: "3.0.2",
         description: "Interface for VRFDirect contract. ",
@@ -341,7 +341,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/IPackVRFDirect",
       },
       {
-        identifier: "arc/itokenerc1155",
+        identifier: "neuron/itokenerc1155",
         name: "ITokenERC1155",
         version: "5.3.5",
         description: "Interface for the ERC1155 standard ",
@@ -349,7 +349,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/token/ITokenERC1155",
       },
       {
-        identifier: "arc/itokenerc721",
+        identifier: "neuron/itokenerc721",
         name: "ITokenERC721",
         version: "1.4.3",
         description: "Interface for ERC721 token contracts that can be minted and burned. ",
@@ -357,7 +357,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/token/ITokenERC721",
       },
       {
-        identifier: "arc/itokenerc20",
+        identifier: "neuron/itokenerc20",
         name: "ITokenERC20",
         version: "4.0.6",
         description: "Interface of the ERC20 standard as defined in the EIP-20 specification. ",
@@ -365,7 +365,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/token/ITokenERC20",
       },
       {
-        identifier: "arc/imarketplace",
+        identifier: "neuron/imarketplace",
         name: "IMarketplace",
         version: "4.6.5",
         description: "Interface for a marketplace contract. ",
@@ -373,7 +373,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/marketplace/IMarketplace",
       },
       {
-        identifier: "arc/idroperc20",
+        identifier: "neuron/idroperc20",
         name: "IDropERC20",
         version: "5.6.5",
         description: "Interface for ERC20 token drops ",
@@ -381,7 +381,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/drop/IDropERC20",
       },
       {
-        identifier: "arc/idroperc721",
+        identifier: "neuron/idroperc721",
         name: "IDropERC721",
         version: "4.2.3",
         description: "Interface for ERC721 Drop contracts ",
@@ -389,7 +389,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/drop/IDropERC721",
       },
       {
-        identifier: "arc/idropclaimcondition",
+        identifier: "neuron/idropclaimcondition",
         name: "IDropClaimCondition",
         version: "5.3.4",
         description: "Interface for a claim condition that can be used to determine if a user can claim a drop ",
@@ -397,7 +397,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/drop/IDropClaimCondition",
       },
       {
-        identifier: "arc/idroperc1155",
+        identifier: "neuron/idroperc1155",
         name: "IDropERC1155",
         version: "4.0.4",
         description: "Interface for the ERC1155 Drop contract. ",
@@ -405,7 +405,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/drop/IDropERC1155",
       },
       {
-        identifier: "arc/ieditionstake",
+        identifier: "neuron/ieditionstake",
         name: "IEditionStake",
         version: "1.1.0",
         description: "Interface for Edition Stake contract. ",
@@ -413,7 +413,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/staking/IEditionStake",
       },
       {
-        identifier: "arc/itokenstake",
+        identifier: "neuron/itokenstake",
         name: "ITokenStake",
         version: "1.4.2",
         description: "Interface for a token staking contract. ",
@@ -421,7 +421,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/staking/ITokenStake",
       },
       {
-        identifier: "arc/inftstake",
+        identifier: "neuron/inftstake",
         name: "INFTStake",
         version: "5.6.1",
         description: "A contract for staking NFTs and earning rewards. ",
@@ -429,7 +429,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/staking/INFTStake",
       },
       {
-        identifier: "arc/iairdroperc721claimable",
+        identifier: "neuron/iairdroperc721claimable",
         name: "IAirdropERC721Claimable",
         version: "1.0.4",
         description: "Interface for ERC721 airdrop contracts that allow claiming of tokens. ",
@@ -437,7 +437,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/airdrop/IAirdropERC721Claimable",
       },
       {
-        identifier: "arc/iairdroperc1155claimable",
+        identifier: "neuron/iairdroperc1155claimable",
         name: "IAirdropERC1155Claimable",
         version: "3.2.5",
         description: "Interface for airdropping ERC1155 tokens with a claim functionality. ",
@@ -445,7 +445,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/airdrop/IAirdropERC1155Claimable",
       },
       {
-        identifier: "arc/iairdroperc1155",
+        identifier: "neuron/iairdroperc1155",
         name: "IAirdropERC1155",
         version: "3.6.4",
         description: "Interface for airdropping ERC1155 tokens. ",
@@ -453,7 +453,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/airdrop/IAirdropERC1155",
       },
       {
-        identifier: "arc/iairdroperc721",
+        identifier: "neuron/iairdroperc721",
         name: "IAirdropERC721",
         version: "3.0.2",
         description: "Interface for an ERC721 contract with airdrop functionality. ",
@@ -461,7 +461,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/airdrop/IAirdropERC721",
       },
       {
-        identifier: "arc/iairdroperc20",
+        identifier: "neuron/iairdroperc20",
         name: "IAirdropERC20",
         version: "4.0.0",
         description: "Interface for an ERC20 contract that can be used for airdrops. ",
@@ -476,7 +476,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/openeditionerc721flatfee",
+        identifier: "neuron/openeditionerc721flatfee",
         name: "OpenEditionERC721FlatFee",
         version: "1.2.0",
         description:
@@ -485,7 +485,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/open-edition/OpenEditionERC721FlatFee",
       },
       {
-        identifier: "arc/openeditionerc721",
+        identifier: "neuron/openeditionerc721",
         name: "OpenEditionERC721",
         version: "4.4.3",
         description:
@@ -501,7 +501,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/marketplace",
+        identifier: "neuron/marketplace",
         name: "Marketplace",
         version: "1.1.6",
         description: "Interface for a generic marketplace contract",
@@ -509,7 +509,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/marketplace-legacy/Marketplace",
       },
       {
-        identifier: "arc/englishauctionslogic",
+        identifier: "neuron/englishauctionslogic",
         name: "EnglishAuctionsLogic",
         version: "0.4.0",
         description:
@@ -518,7 +518,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/marketplace/english-auctions/EnglishAuctionsLogic",
       },
       {
-        identifier: "arc/englishauctionsstorage",
+        identifier: "neuron/englishauctionsstorage",
         name: "EnglishAuctionsStorage",
         version: "3.2.6",
         description:
@@ -527,7 +527,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/marketplace/english-auctions/EnglishAuctionsStorage",
       },
       {
-        identifier: "arc/directlistingsstorage",
+        identifier: "neuron/directlistingsstorage",
         name: "DirectListingsStorage",
         version: "1.3.5",
         description:
@@ -536,7 +536,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/marketplace/direct-listings/DirectListingsStorage",
       },
       {
-        identifier: "arc/directlistingslogic",
+        identifier: "neuron/directlistingslogic",
         name: "DirectListingsLogic",
         version: "3.3.1",
         description:
@@ -545,7 +545,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/marketplace/direct-listings/DirectListingsLogic",
       },
       {
-        identifier: "arc/offerslogic",
+        identifier: "neuron/offerslogic",
         name: "OffersLogic",
         version: "3.0.0",
         description: "A contract for managing offers and their interactions with users and tokens. ",
@@ -553,7 +553,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/marketplace/offers/OffersLogic",
       },
       {
-        identifier: "arc/offersstorage",
+        identifier: "neuron/offersstorage",
         name: "OffersStorage",
         version: "3.0.0",
         description: "A contract for storing offers. ",
@@ -561,7 +561,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/marketplace/offers/OffersStorage",
       },
       {
-        identifier: "arc/marketplacev3",
+        identifier: "neuron/marketplacev3",
         name: "MarketplaceV3",
         version: "0.1.4",
         description:
@@ -577,7 +577,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/packvrfdirect",
+        identifier: "neuron/packvrfdirect",
         name: "PackVRFDirect",
         version: "5.1.5",
         description: "Auto-generated description for the PackVRFDirect contract ",
@@ -585,7 +585,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/pack/PackVRFDirect",
       },
       {
-        identifier: "arc/pack",
+        identifier: "neuron/pack",
         name: "Pack",
         version: "4.6.6",
         description:
@@ -601,7 +601,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/loyaltycard",
+        identifier: "neuron/loyaltycard",
         name: "LoyaltyCard",
         version: "0.6.6",
         description: "A Solidity contract that implements a loyalty card system. ",
@@ -616,7 +616,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/droperc20",
+        identifier: "neuron/droperc20",
         name: "DropERC20",
         version: "0.1.4",
         description: "A contract that allows for the distribution of ERC20 tokens to a list of recipients. ",
@@ -624,7 +624,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/drop/DropERC20",
       },
       {
-        identifier: "arc/droperc721",
+        identifier: "neuron/droperc721",
         name: "DropERC721",
         version: "1.0.1",
         description: "A contract that allows for the distribution of ERC721 tokens to a list of recipients. ",
@@ -632,7 +632,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/drop/DropERC721",
       },
       {
-        identifier: "arc/droperc1155",
+        identifier: "neuron/droperc1155",
         name: "DropERC1155",
         version: "3.0.2",
         description: "An ERC-1155 contract that allows for the distribution of tokens to a list of recipients. ",
@@ -647,7 +647,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/managedaccount",
+        identifier: "neuron/managedaccount",
         name: "ManagedAccount",
         version: "5.6.6",
         description: "A contract that allows for the management of an account by a designated manager. ",
@@ -655,7 +655,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/managed/ManagedAccount",
       },
       {
-        identifier: "arc/managedaccountfactory",
+        identifier: "neuron/managedaccountfactory",
         name: "ManagedAccountFactory",
         version: "2.5.6",
         description: "A factory contract for creating and managing managed accounts. ",
@@ -663,7 +663,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/managed/ManagedAccountFactory",
       },
       {
-        identifier: "arc/dynamicaccount",
+        identifier: "neuron/dynamicaccount",
         name: "DynamicAccount",
         version: "4.2.2",
         description:
@@ -672,7 +672,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/dynamic/DynamicAccount",
       },
       {
-        identifier: "arc/dynamicaccountfactory",
+        identifier: "neuron/dynamicaccountfactory",
         name: "DynamicAccountFactory",
         version: "4.5.2",
         description:
@@ -681,7 +681,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/dynamic/DynamicAccountFactory",
       },
       {
-        identifier: "arc/helpers",
+        identifier: "neuron/helpers",
         name: "Helpers",
         version: "0.3.4",
         description: "A library of reusable helper functions for various common Solidity tasks. ",
@@ -689,7 +689,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/Helpers",
       },
       {
-        identifier: "arc/baseaccountfactory",
+        identifier: "neuron/baseaccountfactory",
         name: "BaseAccountFactory",
         version: "0.6.6",
         description: "A factory contract for creating BaseAccount contracts. ",
@@ -697,7 +697,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/BaseAccountFactory",
       },
       {
-        identifier: "arc/useroperationlib",
+        identifier: "neuron/useroperationlib",
         name: "UserOperationLib",
         version: "5.1.1",
         description: "Library for user operations in account abstraction ",
@@ -705,7 +705,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/UserOperationLib",
       },
       {
-        identifier: "arc/accountcore",
+        identifier: "neuron/accountcore",
         name: "AccountCore",
         version: "4.4.5",
         description: "A core account management contract. ",
@@ -713,7 +713,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/AccountCore",
       },
       {
-        identifier: "arc/accountseaportbulksigsupport",
+        identifier: "neuron/accountseaportbulksigsupport",
         name: "AccountSeaportBulkSigSupport",
         version: "1.2.6",
         description:
@@ -722,7 +722,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/AccountSeaportBulkSigSupport",
       },
       {
-        identifier: "arc/entrypoint",
+        identifier: "neuron/entrypoint",
         name: "EntryPoint",
         version: "3.6.3",
         description:
@@ -731,7 +731,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/EntryPoint",
       },
       {
-        identifier: "arc/accountcorestorage",
+        identifier: "neuron/accountcorestorage",
         name: "AccountCoreStorage",
         version: "3.2.2",
         description:
@@ -740,7 +740,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/AccountCoreStorage",
       },
       {
-        identifier: "arc/exec",
+        identifier: "neuron/exec",
         name: "Exec",
         version: "0.0.4",
         description:
@@ -749,7 +749,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/Exec",
       },
       {
-        identifier: "arc/noncemanager",
+        identifier: "neuron/noncemanager",
         name: "NonceManager",
         version: "5.6.6",
         description:
@@ -758,7 +758,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/NonceManager",
       },
       {
-        identifier: "arc/sendercreator",
+        identifier: "neuron/sendercreator",
         name: "SenderCreator",
         version: "3.1.6",
         description:
@@ -767,7 +767,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/SenderCreator",
       },
       {
-        identifier: "arc/accountextension",
+        identifier: "neuron/accountextension",
         name: "AccountExtension",
         version: "4.0.0",
         description:
@@ -776,7 +776,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/AccountExtension",
       },
       {
-        identifier: "arc/stakemanager",
+        identifier: "neuron/stakemanager",
         name: "StakeManager",
         version: "4.2.6",
         description: "StakeManager contract for managing staking and rewards. ",
@@ -784,7 +784,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/StakeManager",
       },
       {
-        identifier: "arc/tokencallbackhandler",
+        identifier: "neuron/tokencallbackhandler",
         name: "TokenCallbackHandler",
         version: "4.5.6",
         description: "A contract that handles callbacks from other contracts. ",
@@ -792,7 +792,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/TokenCallbackHandler",
       },
       {
-        identifier: "arc/baseaccount",
+        identifier: "neuron/baseaccount",
         name: "BaseAccount",
         version: "1.4.6",
         description:
@@ -801,7 +801,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/BaseAccount",
       },
       {
-        identifier: "arc/account",
+        identifier: "neuron/account",
         name: "Account",
         version: "5.1.4",
         description: "Auto-generated description for the Account contract ",
@@ -809,7 +809,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/non-upgradeable/Account",
       },
       {
-        identifier: "arc/accountfactory",
+        identifier: "neuron/accountfactory",
         name: "AccountFactory",
         version: "0.4.0",
         description: "A factory contract for creating new accounts with customizable permissions. ",
@@ -817,7 +817,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/non-upgradeable/AccountFactory",
       },
       {
-        identifier: "arc/iaccount",
+        identifier: "neuron/iaccount",
         name: "IAccount",
         version: "5.2.3",
         description: "Interface for accounts. ",
@@ -825,7 +825,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IAccount",
       },
       {
-        identifier: "arc/packeduseroperation",
+        identifier: "neuron/packeduseroperation",
         name: "PackedUserOperation",
         version: "2.5.5",
         description: "A packed user operation structure for use with the EntryPoint contract ",
@@ -833,7 +833,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/PackedUserOperation",
       },
       {
-        identifier: "arc/iaccountfactory",
+        identifier: "neuron/iaccountfactory",
         name: "IAccountFactory",
         version: "4.6.5",
         description: "Interface for AccountFactory contract. ",
@@ -841,7 +841,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IAccountFactory",
       },
       {
-        identifier: "arc/iaccountexecute",
+        identifier: "neuron/iaccountexecute",
         name: "IAccountExecute",
         version: "0.2.5",
         description: "Interface for the Account contract to execute transactions via the account manager ",
@@ -849,7 +849,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IAccountExecute",
       },
       {
-        identifier: "arc/iaccountcore",
+        identifier: "neuron/iaccountcore",
         name: "IAccountCore",
         version: "2.4.1",
         description: "Interface for AccountCore contracts. ",
@@ -857,7 +857,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IAccountCore",
       },
       {
-        identifier: "arc/ipaymaster",
+        identifier: "neuron/ipaymaster",
         name: "IPaymaster",
         version: "5.5.4",
         description: "Interface for a Paymaster contract. ",
@@ -865,7 +865,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IPaymaster",
       },
       {
-        identifier: "arc/inoncemanager",
+        identifier: "neuron/inoncemanager",
         name: "INonceManager",
         version: "3.3.6",
         description: "Interface for managing nonces. ",
@@ -873,7 +873,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/INonceManager",
       },
       {
-        identifier: "arc/istakemanager",
+        identifier: "neuron/istakemanager",
         name: "IStakeManager",
         version: "0.6.6",
         description: "Interface for a Stake Manager contract. ",
@@ -881,7 +881,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IStakeManager",
       },
       {
-        identifier: "arc/iaggregator",
+        identifier: "neuron/iaggregator",
         name: "IAggregator",
         version: "0.0.3",
         description: "Interface for aggregators of price feeds. ",
@@ -889,7 +889,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IAggregator",
       },
       {
-        identifier: "arc/ientrypoint",
+        identifier: "neuron/ientrypoint",
         name: "IEntryPoint",
         version: "1.5.2",
         description: "Interface for entry point of a reentrancy guard ",
@@ -897,7 +897,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IEntryPoint",
       },
       {
-        identifier: "arc/iaccountfactorycore",
+        identifier: "neuron/iaccountfactorycore",
         name: "IAccountFactoryCore",
         version: "0.1.3",
         description: "Interface for the account factory core contract. ",
@@ -905,7 +905,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IAccountFactoryCore",
       },
       {
-        identifier: "arc/tokenboundaccount",
+        identifier: "neuron/tokenboundaccount",
         name: "TokenBoundAccount",
         version: "1.5.6",
         description:
@@ -914,7 +914,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/token-bound-account/TokenBoundAccount",
       },
       {
-        identifier: "arc/erc6551bytecodelib",
+        identifier: "neuron/erc6551bytecodelib",
         name: "ERC6551BytecodeLib",
         version: "2.3.2",
         description: "Library for generating ERC-6551 bytecode. ",
@@ -922,7 +922,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/token-bound-account/erc6551-utils/ERC6551BytecodeLib",
       },
       {
-        identifier: "arc/ierc6551account",
+        identifier: "neuron/ierc6551account",
         name: "IERC6551Account",
         version: "3.2.6",
         description:
@@ -931,7 +931,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/token-bound-account/erc6551-utils/IERC6551Account",
       },
       {
-        identifier: "arc/erc6551accountlib",
+        identifier: "neuron/erc6551accountlib",
         name: "ERC6551AccountLib",
         version: "2.4.4",
         description:
@@ -947,7 +947,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/burntoclaimdroperc721",
+        identifier: "neuron/burntoclaimdroperc721",
         name: "BurnToClaimDropERC721",
         version: "0.3.2",
         description:
@@ -956,7 +956,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/burn-to-claim-drop/BurnToClaimDropERC721",
       },
       {
-        identifier: "arc/burntoclaimdrop721storage",
+        identifier: "neuron/burntoclaimdrop721storage",
         name: "BurnToClaimDrop721Storage",
         version: "0.6.5",
         description: "This contract stores the storage for the BurnToClaimDrop721 contract. ",
@@ -964,7 +964,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/burn-to-claim-drop/extension/BurnToClaimDrop721Storage",
       },
       {
-        identifier: "arc/burntoclaimdrop721logic",
+        identifier: "neuron/burntoclaimdrop721logic",
         name: "BurnToClaimDrop721Logic",
         version: "2.3.5",
         description:
@@ -973,7 +973,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/burn-to-claim-drop/extension/BurnToClaimDrop721Logic",
       },
       {
-        identifier: "arc/corerouter",
+        identifier: "neuron/corerouter",
         name: "CoreRouter",
         version: "0.4.0",
         description:
@@ -982,7 +982,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/contract-builder/CoreRouter",
       },
       {
-        identifier: "arc/permissionoverride",
+        identifier: "neuron/permissionoverride",
         name: "PermissionOverride",
         version: "0.1.6",
         description:
@@ -991,7 +991,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/contract-builder/extension/PermissionOverride",
       },
       {
-        identifier: "arc/loyaltypoints",
+        identifier: "neuron/loyaltypoints",
         name: "LoyaltyPoints",
         version: "5.6.3",
         description: "A contract for managing loyalty points, allowing users to earn, redeem, and transfer points. ",
@@ -999,7 +999,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/loyalty/LoyaltyPoints",
       },
       {
-        identifier: "arc/airdroperc20claimable",
+        identifier: "neuron/airdroperc20claimable",
         name: "AirdropERC20Claimable",
         version: "2.0.4",
         description:
@@ -1008,7 +1008,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/airdrop/AirdropERC20Claimable",
       },
       {
-        identifier: "arc/airdroperc1155claimable",
+        identifier: "neuron/airdroperc1155claimable",
         name: "AirdropERC1155Claimable",
         version: "0.5.5",
         description: "An ERC-1155 contract for airdropping tokens with a claim functionality. ",
@@ -1016,7 +1016,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/airdrop/AirdropERC1155Claimable",
       },
       {
-        identifier: "arc/airdroperc721claimable",
+        identifier: "neuron/airdroperc721claimable",
         name: "AirdropERC721Claimable",
         version: "2.0.3",
         description:
@@ -1025,7 +1025,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/airdrop/AirdropERC721Claimable",
       },
       {
-        identifier: "arc/airdroperc20",
+        identifier: "neuron/airdroperc20",
         name: "AirdropERC20",
         version: "5.4.6",
         description:
@@ -1034,7 +1034,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/airdrop/AirdropERC20",
       },
       {
-        identifier: "arc/airdroperc1155",
+        identifier: "neuron/airdroperc1155",
         name: "AirdropERC1155",
         version: "0.1.3",
         description:
@@ -1043,7 +1043,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/airdrop/AirdropERC1155",
       },
       {
-        identifier: "arc/airdroperc721",
+        identifier: "neuron/airdroperc721",
         name: "AirdropERC721",
         version: "5.5.6",
         description: "AirdropERC721 contract allows to airdrop ERC721 tokens to a list of addresses. ",
@@ -1058,7 +1058,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/airdrop",
+        identifier: "neuron/airdrop",
         name: "Airdrop",
         version: "5.5.3",
         description: "A contract that allows for the distribution of tokens to a list of addresses. ",
@@ -1073,7 +1073,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/signaturedrop",
+        identifier: "neuron/signaturedrop",
         name: "SignatureDrop",
         version: "5.5.3",
         description: "A contract for minting NFTs with a signature-based whitelist. ",
@@ -1088,7 +1088,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/itokenerc1155",
+        identifier: "neuron/itokenerc1155",
         name: "ITokenERC1155",
         version: "2.0.4",
         description: "Interface for the ERC1155 standard ",
@@ -1096,7 +1096,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/token/ITokenERC1155",
       },
       {
-        identifier: "arc/itokenerc721",
+        identifier: "neuron/itokenerc721",
         name: "ITokenERC721",
         version: "0.5.2",
         description: "Interface for ERC721 token contracts that can be minted and burned. ",
@@ -1104,7 +1104,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/token/ITokenERC721",
       },
       {
-        identifier: "arc/itokenerc20",
+        identifier: "neuron/itokenerc20",
         name: "ITokenERC20",
         version: "3.0.4",
         description: "Interface of the ERC20 standard as defined in the EIP-20 specification. ",
@@ -1119,7 +1119,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/imarketplace",
+        identifier: "neuron/imarketplace",
         name: "IMarketplace",
         version: "2.1.3",
         description: "Interface for a marketplace contract. ",
@@ -1134,7 +1134,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/idroperc20",
+        identifier: "neuron/idroperc20",
         name: "IDropERC20",
         version: "5.3.6",
         description: "Interface for ERC20 token drops ",
@@ -1142,7 +1142,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/drop/IDropERC20",
       },
       {
-        identifier: "arc/idroperc721",
+        identifier: "neuron/idroperc721",
         name: "IDropERC721",
         version: "5.1.5",
         description: "Interface for ERC721 Drop contracts ",
@@ -1150,7 +1150,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/drop/IDropERC721",
       },
       {
-        identifier: "arc/idropclaimcondition",
+        identifier: "neuron/idropclaimcondition",
         name: "IDropClaimCondition",
         version: "5.6.2",
         description: "Interface for a claim condition that can be used to determine if a user can claim a drop ",
@@ -1158,7 +1158,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/drop/IDropClaimCondition",
       },
       {
-        identifier: "arc/idroperc1155",
+        identifier: "neuron/idroperc1155",
         name: "IDropERC1155",
         version: "3.2.1",
         description: "Interface for the ERC1155 Drop contract. ",
@@ -1173,7 +1173,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/ieditionstake",
+        identifier: "neuron/ieditionstake",
         name: "IEditionStake",
         version: "0.0.0",
         description: "Interface for Edition Stake contract. ",
@@ -1181,7 +1181,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/staking/IEditionStake",
       },
       {
-        identifier: "arc/itokenstake",
+        identifier: "neuron/itokenstake",
         name: "ITokenStake",
         version: "5.2.6",
         description: "Interface for a token staking contract. ",
@@ -1189,7 +1189,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/staking/ITokenStake",
       },
       {
-        identifier: "arc/inftstake",
+        identifier: "neuron/inftstake",
         name: "INFTStake",
         version: "4.2.6",
         description: "A contract for staking NFTs and earning rewards. ",
@@ -1204,7 +1204,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/iairdroperc721claimable",
+        identifier: "neuron/iairdroperc721claimable",
         name: "IAirdropERC721Claimable",
         version: "1.5.6",
         description: "Interface for ERC721 airdrop contracts that allow claiming of tokens. ",
@@ -1212,7 +1212,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/airdrop/IAirdropERC721Claimable",
       },
       {
-        identifier: "arc/iairdroperc1155claimable",
+        identifier: "neuron/iairdroperc1155claimable",
         name: "IAirdropERC1155Claimable",
         version: "3.5.5",
         description: "Interface for airdropping ERC1155 tokens with a claim functionality. ",
@@ -1220,7 +1220,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/airdrop/IAirdropERC1155Claimable",
       },
       {
-        identifier: "arc/iairdroperc1155",
+        identifier: "neuron/iairdroperc1155",
         name: "IAirdropERC1155",
         version: "0.2.0",
         description: "Interface for airdropping ERC1155 tokens. ",
@@ -1228,7 +1228,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/airdrop/IAirdropERC1155",
       },
       {
-        identifier: "arc/iairdroperc721",
+        identifier: "neuron/iairdroperc721",
         name: "IAirdropERC721",
         version: "0.1.2",
         description: "Interface for an ERC721 contract with airdrop functionality. ",
@@ -1236,7 +1236,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/interface/airdrop/IAirdropERC721",
       },
       {
-        identifier: "arc/iairdroperc20",
+        identifier: "neuron/iairdroperc20",
         name: "IAirdropERC20",
         version: "3.4.2",
         description: "Interface for an ERC20 contract that can be used for airdrops. ",
@@ -1251,7 +1251,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/englishauctionslogic",
+        identifier: "neuron/englishauctionslogic",
         name: "EnglishAuctionsLogic",
         version: "0.1.3",
         description:
@@ -1260,7 +1260,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/marketplace/english-auctions/EnglishAuctionsLogic",
       },
       {
-        identifier: "arc/englishauctionsstorage",
+        identifier: "neuron/englishauctionsstorage",
         name: "EnglishAuctionsStorage",
         version: "1.0.1",
         description:
@@ -1276,7 +1276,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/directlistingsstorage",
+        identifier: "neuron/directlistingsstorage",
         name: "DirectListingsStorage",
         version: "2.2.3",
         description:
@@ -1285,7 +1285,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/marketplace/direct-listings/DirectListingsStorage",
       },
       {
-        identifier: "arc/directlistingslogic",
+        identifier: "neuron/directlistingslogic",
         name: "DirectListingsLogic",
         version: "4.4.1",
         description:
@@ -1301,7 +1301,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/offerslogic",
+        identifier: "neuron/offerslogic",
         name: "OffersLogic",
         version: "4.2.1",
         description: "A contract for managing offers and their interactions with users and tokens. ",
@@ -1309,7 +1309,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/marketplace/offers/OffersLogic",
       },
       {
-        identifier: "arc/offersstorage",
+        identifier: "neuron/offersstorage",
         name: "OffersStorage",
         version: "0.0.0",
         description: "A contract for storing offers. ",
@@ -1324,7 +1324,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/marketplacev3",
+        identifier: "neuron/marketplacev3",
         name: "MarketplaceV3",
         version: "1.0.0",
         description:
@@ -1340,7 +1340,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/rulesengineextension",
+        identifier: "neuron/rulesengineextension",
         name: "RulesEngineExtension",
         version: "2.4.5",
         description: "A Solidity contract for defining and executing rules using a flexible expression-based system. ",
@@ -1355,7 +1355,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/managedaccount",
+        identifier: "neuron/managedaccount",
         name: "ManagedAccount",
         version: "4.4.2",
         description: "A contract that allows for the management of an account by a designated manager. ",
@@ -1363,7 +1363,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/managed/ManagedAccount",
       },
       {
-        identifier: "arc/managedaccountfactory",
+        identifier: "neuron/managedaccountfactory",
         name: "ManagedAccountFactory",
         version: "4.5.1",
         description: "A factory contract for creating and managing managed accounts. ",
@@ -1378,7 +1378,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/dynamicaccount",
+        identifier: "neuron/dynamicaccount",
         name: "DynamicAccount",
         version: "2.2.2",
         description:
@@ -1387,7 +1387,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/dynamic/DynamicAccount",
       },
       {
-        identifier: "arc/dynamicaccountfactory",
+        identifier: "neuron/dynamicaccountfactory",
         name: "DynamicAccountFactory",
         version: "2.5.6",
         description:
@@ -1403,7 +1403,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/helpers",
+        identifier: "neuron/helpers",
         name: "Helpers",
         version: "1.3.2",
         description: "A library of reusable helper functions for various common Solidity tasks. ",
@@ -1411,7 +1411,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/Helpers",
       },
       {
-        identifier: "arc/baseaccountfactory",
+        identifier: "neuron/baseaccountfactory",
         name: "BaseAccountFactory",
         version: "2.5.0",
         description: "A factory contract for creating BaseAccount contracts. ",
@@ -1419,7 +1419,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/BaseAccountFactory",
       },
       {
-        identifier: "arc/useroperationlib",
+        identifier: "neuron/useroperationlib",
         name: "UserOperationLib",
         version: "1.0.1",
         description: "Library for user operations in account abstraction ",
@@ -1427,7 +1427,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/UserOperationLib",
       },
       {
-        identifier: "arc/accountcore",
+        identifier: "neuron/accountcore",
         name: "AccountCore",
         version: "2.1.0",
         description: "A core account management contract. ",
@@ -1435,7 +1435,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/AccountCore",
       },
       {
-        identifier: "arc/accountseaportbulksigsupport",
+        identifier: "neuron/accountseaportbulksigsupport",
         name: "AccountSeaportBulkSigSupport",
         version: "5.0.0",
         description:
@@ -1444,7 +1444,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/AccountSeaportBulkSigSupport",
       },
       {
-        identifier: "arc/entrypoint",
+        identifier: "neuron/entrypoint",
         name: "EntryPoint",
         version: "1.1.3",
         description:
@@ -1453,7 +1453,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/EntryPoint",
       },
       {
-        identifier: "arc/accountcorestorage",
+        identifier: "neuron/accountcorestorage",
         name: "AccountCoreStorage",
         version: "3.4.5",
         description:
@@ -1462,7 +1462,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/AccountCoreStorage",
       },
       {
-        identifier: "arc/exec",
+        identifier: "neuron/exec",
         name: "Exec",
         version: "5.6.4",
         description:
@@ -1471,7 +1471,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/Exec",
       },
       {
-        identifier: "arc/noncemanager",
+        identifier: "neuron/noncemanager",
         name: "NonceManager",
         version: "5.2.3",
         description:
@@ -1480,7 +1480,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/NonceManager",
       },
       {
-        identifier: "arc/sendercreator",
+        identifier: "neuron/sendercreator",
         name: "SenderCreator",
         version: "3.5.4",
         description:
@@ -1489,7 +1489,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/SenderCreator",
       },
       {
-        identifier: "arc/accountextension",
+        identifier: "neuron/accountextension",
         name: "AccountExtension",
         version: "5.1.4",
         description:
@@ -1498,7 +1498,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/AccountExtension",
       },
       {
-        identifier: "arc/stakemanager",
+        identifier: "neuron/stakemanager",
         name: "StakeManager",
         version: "4.3.4",
         description: "StakeManager contract for managing staking and rewards. ",
@@ -1506,7 +1506,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/StakeManager",
       },
       {
-        identifier: "arc/tokencallbackhandler",
+        identifier: "neuron/tokencallbackhandler",
         name: "TokenCallbackHandler",
         version: "4.2.3",
         description: "A contract that handles callbacks from other contracts. ",
@@ -1514,7 +1514,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/utils/TokenCallbackHandler",
       },
       {
-        identifier: "arc/baseaccount",
+        identifier: "neuron/baseaccount",
         name: "BaseAccount",
         version: "0.2.2",
         description:
@@ -1530,7 +1530,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/account",
+        identifier: "neuron/account",
         name: "Account",
         version: "5.6.0",
         description: "Auto-generated description for the Account contract ",
@@ -1538,7 +1538,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/non-upgradeable/Account",
       },
       {
-        identifier: "arc/accountfactory",
+        identifier: "neuron/accountfactory",
         name: "AccountFactory",
         version: "4.5.5",
         description: "A factory contract for creating new accounts with customizable permissions. ",
@@ -1553,7 +1553,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/iaccount",
+        identifier: "neuron/iaccount",
         name: "IAccount",
         version: "4.0.6",
         description: "Interface for accounts. ",
@@ -1561,7 +1561,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IAccount",
       },
       {
-        identifier: "arc/packeduseroperation",
+        identifier: "neuron/packeduseroperation",
         name: "PackedUserOperation",
         version: "1.5.6",
         description: "A packed user operation structure for use with the EntryPoint contract ",
@@ -1569,7 +1569,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/PackedUserOperation",
       },
       {
-        identifier: "arc/iaccountfactory",
+        identifier: "neuron/iaccountfactory",
         name: "IAccountFactory",
         version: "5.0.6",
         description: "Interface for AccountFactory contract. ",
@@ -1577,7 +1577,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IAccountFactory",
       },
       {
-        identifier: "arc/iaccountexecute",
+        identifier: "neuron/iaccountexecute",
         name: "IAccountExecute",
         version: "5.4.2",
         description: "Interface for the Account contract to execute transactions via the account manager ",
@@ -1585,7 +1585,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IAccountExecute",
       },
       {
-        identifier: "arc/iaccountcore",
+        identifier: "neuron/iaccountcore",
         name: "IAccountCore",
         version: "5.4.6",
         description: "Interface for AccountCore contracts. ",
@@ -1593,7 +1593,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IAccountCore",
       },
       {
-        identifier: "arc/ipaymaster",
+        identifier: "neuron/ipaymaster",
         name: "IPaymaster",
         version: "1.4.4",
         description: "Interface for a Paymaster contract. ",
@@ -1601,7 +1601,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IPaymaster",
       },
       {
-        identifier: "arc/inoncemanager",
+        identifier: "neuron/inoncemanager",
         name: "INonceManager",
         version: "3.3.2",
         description: "Interface for managing nonces. ",
@@ -1609,7 +1609,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/INonceManager",
       },
       {
-        identifier: "arc/istakemanager",
+        identifier: "neuron/istakemanager",
         name: "IStakeManager",
         version: "0.0.0",
         description: "Interface for a Stake Manager contract. ",
@@ -1617,7 +1617,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IStakeManager",
       },
       {
-        identifier: "arc/iaggregator",
+        identifier: "neuron/iaggregator",
         name: "IAggregator",
         version: "1.0.0",
         description: "Interface for aggregators of price feeds. ",
@@ -1625,7 +1625,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IAggregator",
       },
       {
-        identifier: "arc/ientrypoint",
+        identifier: "neuron/ientrypoint",
         name: "IEntryPoint",
         version: "0.0.0",
         description: "Interface for entry point of a reentrancy guard ",
@@ -1633,7 +1633,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/interfaces/IEntryPoint",
       },
       {
-        identifier: "arc/iaccountfactorycore",
+        identifier: "neuron/iaccountfactorycore",
         name: "IAccountFactoryCore",
         version: "3.2.4",
         description: "Interface for the account factory core contract. ",
@@ -1648,7 +1648,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/tokenboundaccount",
+        identifier: "neuron/tokenboundaccount",
         name: "TokenBoundAccount",
         version: "5.3.6",
         description:
@@ -1657,7 +1657,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/token-bound-account/TokenBoundAccount",
       },
       {
-        identifier: "arc/erc6551bytecodelib",
+        identifier: "neuron/erc6551bytecodelib",
         name: "ERC6551BytecodeLib",
         version: "2.2.1",
         description: "Library for generating ERC-6551 bytecode. ",
@@ -1665,7 +1665,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/token-bound-account/erc6551-utils/ERC6551BytecodeLib",
       },
       {
-        identifier: "arc/ierc6551account",
+        identifier: "neuron/ierc6551account",
         name: "IERC6551Account",
         version: "5.3.6",
         description:
@@ -1674,7 +1674,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/token-bound-account/erc6551-utils/IERC6551Account",
       },
       {
-        identifier: "arc/erc6551accountlib",
+        identifier: "neuron/erc6551accountlib",
         name: "ERC6551AccountLib",
         version: "2.4.4",
         description:
@@ -1690,7 +1690,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/erc6551bytecodelib",
+        identifier: "neuron/erc6551bytecodelib",
         name: "ERC6551BytecodeLib",
         version: "1.3.3",
         description: "Library for generating ERC-6551 bytecode. ",
@@ -1698,7 +1698,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/token-bound-account/erc6551-utils/ERC6551BytecodeLib",
       },
       {
-        identifier: "arc/ierc6551account",
+        identifier: "neuron/ierc6551account",
         name: "IERC6551Account",
         version: "2.6.2",
         description:
@@ -1707,7 +1707,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/account/token-bound-account/erc6551-utils/IERC6551Account",
       },
       {
-        identifier: "arc/erc6551accountlib",
+        identifier: "neuron/erc6551accountlib",
         name: "ERC6551AccountLib",
         version: "2.3.4",
         description:
@@ -1723,7 +1723,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/burntoclaimdroperc721",
+        identifier: "neuron/burntoclaimdroperc721",
         name: "BurnToClaimDropERC721",
         version: "3.0.2",
         description:
@@ -1732,7 +1732,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/burn-to-claim-drop/BurnToClaimDropERC721",
       },
       {
-        identifier: "arc/burntoclaimdrop721storage",
+        identifier: "neuron/burntoclaimdrop721storage",
         name: "BurnToClaimDrop721Storage",
         version: "0.0.1",
         description: "This contract stores the storage for the BurnToClaimDrop721 contract. ",
@@ -1740,7 +1740,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/burn-to-claim-drop/extension/BurnToClaimDrop721Storage",
       },
       {
-        identifier: "arc/burntoclaimdrop721logic",
+        identifier: "neuron/burntoclaimdrop721logic",
         name: "BurnToClaimDrop721Logic",
         version: "0.1.2",
         description:
@@ -1756,7 +1756,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/corerouter",
+        identifier: "neuron/corerouter",
         name: "CoreRouter",
         version: "1.2.5",
         description:
@@ -1765,7 +1765,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/contract-builder/CoreRouter",
       },
       {
-        identifier: "arc/permissionoverride",
+        identifier: "neuron/permissionoverride",
         name: "PermissionOverride",
         version: "3.5.6",
         description:
@@ -1781,7 +1781,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/loyaltypoints",
+        identifier: "neuron/loyaltypoints",
         name: "LoyaltyPoints",
         version: "2.5.4",
         description: "A contract for managing loyalty points, allowing users to earn, redeem, and transfer points. ",
@@ -1796,7 +1796,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/airdroperc20claimable",
+        identifier: "neuron/airdroperc20claimable",
         name: "AirdropERC20Claimable",
         version: "4.4.0",
         description:
@@ -1805,7 +1805,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/airdrop/AirdropERC20Claimable",
       },
       {
-        identifier: "arc/airdroperc1155claimable",
+        identifier: "neuron/airdroperc1155claimable",
         name: "AirdropERC1155Claimable",
         version: "3.6.1",
         description: "An ERC-1155 contract for airdropping tokens with a claim functionality. ",
@@ -1813,7 +1813,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/airdrop/AirdropERC1155Claimable",
       },
       {
-        identifier: "arc/airdroperc721claimable",
+        identifier: "neuron/airdroperc721claimable",
         name: "AirdropERC721Claimable",
         version: "2.3.0",
         description:
@@ -1822,7 +1822,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/airdrop/AirdropERC721Claimable",
       },
       {
-        identifier: "arc/airdroperc20",
+        identifier: "neuron/airdroperc20",
         name: "AirdropERC20",
         version: "4.6.2",
         description:
@@ -1831,7 +1831,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/airdrop/AirdropERC20",
       },
       {
-        identifier: "arc/airdroperc1155",
+        identifier: "neuron/airdroperc1155",
         name: "AirdropERC1155",
         version: "3.0.6",
         description:
@@ -1840,7 +1840,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/airdrop/AirdropERC1155",
       },
       {
-        identifier: "arc/airdroperc721",
+        identifier: "neuron/airdroperc721",
         name: "AirdropERC721",
         version: "5.3.0",
         description: "AirdropERC721 contract allows to airdrop ERC721 tokens to a list of addresses. ",
@@ -1855,7 +1855,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/burntoclaimdrop721storage",
+        identifier: "neuron/burntoclaimdrop721storage",
         name: "BurnToClaimDrop721Storage",
         version: "3.2.4",
         description: "This contract stores the storage for the BurnToClaimDrop721 contract. ",
@@ -1863,7 +1863,7 @@ const ContractStore: IContractStore[] = [
         path: "contracts/unaudited/burn-to-claim-drop/extension/BurnToClaimDrop721Storage",
       },
       {
-        identifier: "arc/burntoclaimdrop721logic",
+        identifier: "neuron/burntoclaimdrop721logic",
         name: "BurnToClaimDrop721Logic",
         version: "2.1.6",
         description:
@@ -1879,7 +1879,7 @@ const ContractStore: IContractStore[] = [
     description: "",
     contracts: [
       {
-        identifier: "arc/permissionoverride",
+        identifier: "neuron/permissionoverride",
         name: "PermissionOverride",
         version: "3.5.6",
         description:

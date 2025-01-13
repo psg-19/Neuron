@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "AccountCoreStorage",
   description: `The AccountCoreStorage contract is a core component of the OpenZeppelin Account system. It serves as a central storage unit for account-related data, including account creation, management, and permissions. This contract is designed to be used in conjunction with other Account modules, offering flexibility and extensibility for various account implementation needs.`,
   content: [

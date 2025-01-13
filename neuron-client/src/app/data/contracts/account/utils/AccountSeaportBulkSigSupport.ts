@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "AccountSeaportBulkSigSupport",
   description: `This contract enables batch signature support for Seaport, allowing users to sign multiple Seaport orders in a single transaction.`,
   content: [

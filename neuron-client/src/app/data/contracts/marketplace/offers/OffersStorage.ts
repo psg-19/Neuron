@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "OffersStorage",
   description: `A contract for storing offers.`,
   content: [

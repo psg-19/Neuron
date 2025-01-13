@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "LoyaltyPoints",
   description: `A contract for managing loyalty points, allowing users to earn, redeem, and transfer points.`,
   content: [

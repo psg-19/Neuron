@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "VoteERC20",
   description: `The VoteERC20 contract is an advanced governance system built for ERC20 token holders. It leverages OpenZeppelin's Governor framework to allow token holders to propose and vote on decisions affecting the protocol. The contract supports meta-transactions for enhanced flexibility, making it suitable for decentralized applications requiring robust governance mechanisms.
   

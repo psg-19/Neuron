@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "IAccountExecute",
   description: `Interface for the Account contract to execute transactions via the account manager`,
   content: [

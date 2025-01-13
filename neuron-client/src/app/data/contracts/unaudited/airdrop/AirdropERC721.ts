@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "AirdropERC721",
   description: `AirdropERC721 contract allows to airdrop ERC721 tokens to a list of addresses.`,
   content: [

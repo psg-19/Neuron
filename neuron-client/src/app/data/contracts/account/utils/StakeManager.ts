@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "StakeManager",
   description: `StakeManager contract for managing staking and rewards.`,
   content: [

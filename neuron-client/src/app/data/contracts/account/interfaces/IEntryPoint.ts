@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "IEntryPoint",
   description: `Interface for entry point of a reentrancy guard`,
   content: [

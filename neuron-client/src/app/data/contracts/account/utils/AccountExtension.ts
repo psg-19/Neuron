@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "AccountExtension",
   description: `This contract extends the functionality of an account by allowing for the delegation of operations to another address. This can be useful for scenarios like multi-sig wallets, where multiple parties need to approve transactions before they can be executed.`,
   content: [

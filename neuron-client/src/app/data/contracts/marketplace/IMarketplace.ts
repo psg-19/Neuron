@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "IMarketplace",
   description: `Interface for a generic marketplace contract.`,
   content: [

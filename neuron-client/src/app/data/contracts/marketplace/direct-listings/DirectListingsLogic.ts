@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "DirectListingsLogic",
   description: `This contract manages direct listings for the marketplace. It allows for the creation, listing, and removal of direct listings, ensuring proper ownership and access control.`,
   content: [

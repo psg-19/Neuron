@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "IAccountFactoryCore",
   description: `Interface for the account factory core contract.`,
   content: [

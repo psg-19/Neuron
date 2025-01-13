@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "TieredDrop",
   description: `A smart contract that allows for the creation and management of tiered NFT drops, where different tiers of NFTs have different access levels and pricing.`,
   content: [

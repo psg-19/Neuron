@@ -19,6 +19,7 @@
     "@tanstack/react-query": "^5.67.2",
     "axios": "^1.8.2",
     "file-saver": "^2.0.5",
+    "fs": "^0.0.1-security",
     "jszip": "^3.10.1",
     "next": "15.2.1",
     "react": "^18.3.1",

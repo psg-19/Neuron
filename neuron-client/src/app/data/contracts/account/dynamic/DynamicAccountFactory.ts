@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "DynamicAccountFactory",
   description: `A contract that allows creating dynamic accounts with unique IDs. The owner can customize these accounts by setting their initial state, specifying their functionality with bytecode and runtime code, and controlling their permissions. These accounts can be deployed in various ways based on the chosen configuration, offering flexibility in their deployment.`,
   content: [

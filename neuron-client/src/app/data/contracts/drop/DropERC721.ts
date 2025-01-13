@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "DropERC721",
   description: `A contract for managing a collection of non-fungible tokens (NFTs) with a drop mechanism.`,
   content: [

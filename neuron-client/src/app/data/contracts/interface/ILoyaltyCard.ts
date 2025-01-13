@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "ILoyaltyCard",
   description: `Interface for a loyalty card contract.`,
   content: [

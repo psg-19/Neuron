@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "OpenEditionERC721",
   description: `OpenEditionERC721 is an ERC-721 contract designed for creating and managing open editions of NFTs, where each NFT is a unique token with its own attributes but can be minted multiple times, allowing for unlimited copies of the same artwork. This contract enables creators to sell and distribute their art through the blockchain, while also giving collectors a way to own and trade these digital assets.`,
   content: [

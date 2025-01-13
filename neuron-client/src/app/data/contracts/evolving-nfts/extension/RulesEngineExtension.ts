@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "RulesEngineExtension",
   description: `A Solidity contract for defining and executing rules using a flexible expression-based system.`,
   content: [

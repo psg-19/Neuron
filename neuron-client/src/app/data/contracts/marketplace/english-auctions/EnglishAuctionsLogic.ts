@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "EnglishAuctionsLogic",
   description: `This contract implements English auctions, where the highest bidder wins. It allows anyone to create an auction, make bids, and claim the auctioned item if they are the highest bidder.`,
   content: [

@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "UserOperationLib",
   description: `Library for user operations in account abstraction`,
   content: [

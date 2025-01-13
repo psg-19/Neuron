@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "TokenERC1155",
   description: `ERC-1155 standard compliant token contract, supporting minting and transferring of non-fungible tokens.`,
   content: [

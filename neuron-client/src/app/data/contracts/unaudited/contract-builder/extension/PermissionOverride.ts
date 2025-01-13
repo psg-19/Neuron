@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "PermissionOverride",
   description: `The PermissionOverride contract allows for overriding the permission settings of a given address for a specific function. This is useful for scenarios where you need to grant temporary or limited access to a function, even if the address doesn't normally have permission.`,
   content: [

@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "OffersLogic",
   description: `A contract for managing offers and their interactions with users and tokens.`,
   content: [

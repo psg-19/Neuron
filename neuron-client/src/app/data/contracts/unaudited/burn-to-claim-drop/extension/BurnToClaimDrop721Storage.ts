@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "BurnToClaimDrop721Storage",
   description: `This contract stores the storage for the BurnToClaimDrop721 contract.`,
   content: [

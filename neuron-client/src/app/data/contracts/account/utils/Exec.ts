@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "Exec",
   description: `A contract that allows for the execution of arbitrary code with a configurable gas limit and a configurable execution environment.`,
   content: [

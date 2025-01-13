@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "DirectListingsStorage",
   description: `This contract is used to store listings for the Direct Listings platform. It is designed to be used in conjunction with the Direct Listings Marketplace contract, which provides the functionality for users to interact with the listings.`,
   content: [

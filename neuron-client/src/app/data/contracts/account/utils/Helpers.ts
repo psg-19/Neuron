@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "Helpers",
   description: `A library of reusable helper functions for various common Solidity tasks.`,
   content: [

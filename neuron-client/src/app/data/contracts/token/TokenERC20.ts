@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "TokenERC20",
   description: `A standard ERC20 token contract for representing and managing fungible tokens on the Ethereum blockchain.`,
   content: [

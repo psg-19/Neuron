@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "TokenCallbackHandler",
   description: `A contract that handles callbacks from other contracts.`,
   content: [

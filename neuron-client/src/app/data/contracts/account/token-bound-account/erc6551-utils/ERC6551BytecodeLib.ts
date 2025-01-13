@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "ERC6551BytecodeLib",
   description: `Library for generating ERC-6551 bytecode.`,
   content: [

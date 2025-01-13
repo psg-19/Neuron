@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "OpenEditionERC721FlatFee",
   description: `An ERC721 contract that allows for the minting of multiple copies of the same token, with a flat fee for each copy.`,
   content: [

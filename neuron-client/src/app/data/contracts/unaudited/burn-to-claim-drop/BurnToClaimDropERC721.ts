@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "BurnToClaimDropERC721",
   description: `This contract allows users to burn tokens from another ERC721 contract to claim a new ERC721 token from this contract.`,
   content: [

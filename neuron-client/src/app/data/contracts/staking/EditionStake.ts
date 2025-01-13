@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "EditionStake",
   description: `A contract that allows users to stake their Editions and earn rewards.`,
   content: [

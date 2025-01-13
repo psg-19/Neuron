@@ -1,4 +1,4 @@
-const definition: IContractDefinition = {
+const definition: any = {
   name: "AirdropERC20Claimable",
   description: `An ERC20 token contract that implements an airdrop functionality where users can claim tokens based on their eligibility. This contract allows for easy distribution of tokens to a pre-defined list of addresses.`,
   content: [

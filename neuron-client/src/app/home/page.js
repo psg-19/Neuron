@@ -2,6 +2,12 @@ import React from 'react'
 import { FloatingNavDemo } from '../components/Navbar'
 import { Spotlight } from '../components/ui/Spotlight'
 import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
+import { FeaturesSectionDemo } from '../components/ui/FeaturesSectionDemo';
+import { SmartContractsMarquee } from '../components/SmartContractsMarquee';
+import { EndToEndToolsSection } from '../components/EndToEndToolsSection';
+import { ModernFooter } from '../components/Footer';
+
+
 
 const words = [
   {
@@ -24,7 +30,7 @@ const words = [
 
 const page = () => {
   return (
-    <main className="min-h-screen  bg-black/[0.96] antialiased bg-grid-white/[0.02]">
+    <main className="min-h-screen overflow-hidden bg-black/[0.96] antialiased bg-grid-white/[0.02]">
       {/* The spotlight effect */}
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
@@ -63,6 +69,11 @@ const page = () => {
     </button>
         </div>
       </section>
+      <FeaturesSectionDemo />
+      <SmartContractsMarquee />
+      <EndToEndToolsSection />
+      <ModernFooter />
+
     </main>
   )
 }

@@ -232,39 +232,6 @@ const ContractStore: IContractStore[] = [
     ],
   },
   {
-    identifier: "token",
-    name: "Token",
-    description: "",
-    contracts: [
-      {
-        identifier: "neuron/tokenerc20",
-        name: "TokenERC20",
-        version: "3.0.3",
-        description:
-          "A standard ERC20 token contract for representing and managing fungible tokens on the Ethereum blockchain. ",
-        source: tokenerc20,
-        path: "contracts/token/TokenERC20",
-      },
-      {
-        identifier: "neuron/tokenerc1155",
-        name: "TokenERC1155",
-        version: "1.3.5",
-        description:
-          "ERC-1155 standard compliant token contract, supporting minting and transferring of non-fungible tokens. ",
-        source: tokenerc1155,
-        path: "contracts/token/TokenERC1155",
-      },
-      {
-        identifier: "neuron/tokenerc721",
-        name: "TokenERC721",
-        version: "4.0.1",
-        description: "A basic ERC721 token contract. ",
-        source: tokenerc721,
-        path: "contracts/token/TokenERC721",
-      },
-    ],
-  },
-  {
     identifier: "split",
     name: "Split",
     description: "",
@@ -592,21 +559,6 @@ const ContractStore: IContractStore[] = [
           "The Pack contract allows users to create and manage packs of items. These packs can be used to represent real-world collections, such as trading cards, or digital items, such as NFTs. ",
         source: pack,
         path: "contracts/pack/Pack",
-      },
-    ],
-  },
-  {
-    identifier: "loyalty",
-    name: "Loyalty",
-    description: "",
-    contracts: [
-      {
-        identifier: "neuron/loyaltycard",
-        name: "LoyaltyCard",
-        version: "0.6.6",
-        description: "A Solidity contract that implements a loyalty card system. ",
-        source: loyaltycard,
-        path: "contracts/loyalty/LoyaltyCard",
       },
     ],
   },
@@ -1053,21 +1005,6 @@ const ContractStore: IContractStore[] = [
     ],
   },
   {
-    identifier: "airdrop",
-    name: "Airdrop",
-    description: "",
-    contracts: [
-      {
-        identifier: "neuron/airdrop",
-        name: "Airdrop",
-        version: "5.5.3",
-        description: "A contract that allows for the distribution of tokens to a list of addresses. ",
-        source: airdrop,
-        path: "contracts/airdrop/Airdrop",
-      },
-    ],
-  },
-  {
     identifier: "signature-drop",
     name: "Signature-drop",
     description: "",
@@ -1113,60 +1050,7 @@ const ContractStore: IContractStore[] = [
       },
     ],
   },
-  {
-    identifier: "marketplace",
-    name: "Marketplace",
-    description: "",
-    contracts: [
-      {
-        identifier: "neuron/imarketplace",
-        name: "IMarketplace",
-        version: "2.1.3",
-        description: "Interface for a marketplace contract. ",
-        source: imarketplace,
-        path: "contracts/interface/marketplace/IMarketplace",
-      },
-    ],
-  },
-  {
-    identifier: "drop",
-    name: "Drop",
-    description: "",
-    contracts: [
-      {
-        identifier: "neuron/idroperc20",
-        name: "IDropERC20",
-        version: "5.3.6",
-        description: "Interface for ERC20 token drops ",
-        source: idroperc20,
-        path: "contracts/interface/drop/IDropERC20",
-      },
-      {
-        identifier: "neuron/idroperc721",
-        name: "IDropERC721",
-        version: "5.1.5",
-        description: "Interface for ERC721 Drop contracts ",
-        source: idroperc721,
-        path: "contracts/interface/drop/IDropERC721",
-      },
-      {
-        identifier: "neuron/idropclaimcondition",
-        name: "IDropClaimCondition",
-        version: "5.6.2",
-        description: "Interface for a claim condition that can be used to determine if a user can claim a drop ",
-        source: idropclaimcondition,
-        path: "contracts/interface/drop/IDropClaimCondition",
-      },
-      {
-        identifier: "neuron/idroperc1155",
-        name: "IDropERC1155",
-        version: "3.2.1",
-        description: "Interface for the ERC1155 Drop contract. ",
-        source: idroperc1155,
-        path: "contracts/interface/drop/IDropERC1155",
-      },
-    ],
-  },
+
   {
     identifier: "staking",
     name: "Staking",
@@ -1195,53 +1079,6 @@ const ContractStore: IContractStore[] = [
         description: "A contract for staking NFTs and earning rewards. ",
         source: inftstake,
         path: "contracts/interface/staking/INFTStake",
-      },
-    ],
-  },
-  {
-    identifier: "airdrop",
-    name: "Airdrop",
-    description: "",
-    contracts: [
-      {
-        identifier: "neuron/iairdroperc721claimable",
-        name: "IAirdropERC721Claimable",
-        version: "1.5.6",
-        description: "Interface for ERC721 airdrop contracts that allow claiming of tokens. ",
-        source: iairdroperc721claimable,
-        path: "contracts/interface/airdrop/IAirdropERC721Claimable",
-      },
-      {
-        identifier: "neuron/iairdroperc1155claimable",
-        name: "IAirdropERC1155Claimable",
-        version: "3.5.5",
-        description: "Interface for airdropping ERC1155 tokens with a claim functionality. ",
-        source: iairdroperc1155claimable,
-        path: "contracts/interface/airdrop/IAirdropERC1155Claimable",
-      },
-      {
-        identifier: "neuron/iairdroperc1155",
-        name: "IAirdropERC1155",
-        version: "0.2.0",
-        description: "Interface for airdropping ERC1155 tokens. ",
-        source: iairdroperc1155,
-        path: "contracts/interface/airdrop/IAirdropERC1155",
-      },
-      {
-        identifier: "neuron/iairdroperc721",
-        name: "IAirdropERC721",
-        version: "0.1.2",
-        description: "Interface for an ERC721 contract with airdrop functionality. ",
-        source: iairdroperc721,
-        path: "contracts/interface/airdrop/IAirdropERC721",
-      },
-      {
-        identifier: "neuron/iairdroperc20",
-        name: "IAirdropERC20",
-        version: "3.4.2",
-        description: "Interface for an ERC20 contract that can be used for airdrops. ",
-        source: iairdroperc20,
-        path: "contracts/interface/airdrop/IAirdropERC20",
       },
     ],
   },
@@ -1331,21 +1168,6 @@ const ContractStore: IContractStore[] = [
           "A decentralized marketplace for buying and selling digital assets, featuring an advanced royalty system, flexible listing options, and robust security measures. ",
         source: marketplacev3,
         path: "contracts/marketplace/entrypoint/MarketplaceV3",
-      },
-    ],
-  },
-  {
-    identifier: "extension",
-    name: "Extension",
-    description: "",
-    contracts: [
-      {
-        identifier: "neuron/rulesengineextension",
-        name: "RulesEngineExtension",
-        version: "2.4.5",
-        description: "A Solidity contract for defining and executing rules using a flexible expression-based system. ",
-        source: rulesengineextension,
-        path: "contracts/evolving-nfts/extension/RulesEngineExtension",
       },
     ],
   },
@@ -1849,30 +1671,7 @@ const ContractStore: IContractStore[] = [
       },
     ],
   },
-  {
-    identifier: "extension",
-    name: "Extension",
-    description: "",
-    contracts: [
-      {
-        identifier: "neuron/burntoclaimdrop721storage",
-        name: "BurnToClaimDrop721Storage",
-        version: "3.2.4",
-        description: "This contract stores the storage for the BurnToClaimDrop721 contract. ",
-        source: burntoclaimdrop721storage,
-        path: "contracts/unaudited/burn-to-claim-drop/extension/BurnToClaimDrop721Storage",
-      },
-      {
-        identifier: "neuron/burntoclaimdrop721logic",
-        name: "BurnToClaimDrop721Logic",
-        version: "2.1.6",
-        description:
-          "This contract is a logic contract for the BurnToClaimDrop721 contract. It allows users to burn a specified ERC20 token and claim a corresponding NFT from the BurnToClaimDrop721 contract. ",
-        source: burntoclaimdrop721logic,
-        path: "contracts/unaudited/burn-to-claim-drop/extension/BurnToClaimDrop721Logic",
-      },
-    ],
-  },
+
   {
     identifier: "extension",
     name: "Extension",

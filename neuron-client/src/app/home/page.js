@@ -38,7 +38,6 @@ const page = () => {
       />
 
       {/* Your existing floating nav */}
-      <FloatingNavDemo />
 
       {/* Hero Section */}
       <section className="flex items-center justify-center min-h-[60vh] px-4">

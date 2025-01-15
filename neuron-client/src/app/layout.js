@@ -2,6 +2,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import '@rainbow-me/rainbowkit/styles.css';
+import { FloatingNavDemo } from '../app/components/Navbar'
 import {
   getDefaultConfig,
   RainbowKitProvider,
@@ -61,6 +62,8 @@ export default function RootLayout({ children }) {
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
           <RainbowKitProvider coolMode>
+      <FloatingNavDemo />
+
             {children} {/* Make sure your app components are inside this */}
           </RainbowKitProvider>
         </QueryClientProvider>

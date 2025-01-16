@@ -26,7 +26,7 @@ const sonic = {
   iconBackground: '#fff',
   nativeCurrency: { name: 'Sonic', symbol: 'S', decimals: 18 },
   rpcUrls: {
-    default: { http: ['https://rpc.blaze.soniclabs.com'] },
+    default: {  http: ['https://rpc.blaze.soniclabs.com'] },
   },
   testnet:true
 

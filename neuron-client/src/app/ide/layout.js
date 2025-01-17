@@ -1,62 +1,82 @@
-import React from 'react'
-import { IconBrain, IconAudit, IconCode, IconDownload, IconEdit, IconEye } from '@tabler/icons-react'
+'use client'
+import React, { useState } from 'react'
+import { 
+  RiBrainLine, 
+  RiCheckboxMultipleLine, 
+  RiCodeSSlashLine, 
+  RiDownloadLine, 
+  RiEditLine, 
+  RiEyeLine 
+} from 'react-icons/ri'
 
-const layout = ({ children }) => {
+const Layout = ({ children }) => {
+  const [activeTab, setActiveTab] = useState('Editor')
+  
   const ideNavItems = [
     {
       name: "AI Analysis",
-      icon: <IconBrain className="w-5 h-5" />,
-      onClick: () => console.log("AI Analysis clicked")
+      icon: <RiBrainLine className="w-4 h-4" />,
+      onClick: () => setActiveTab("AI Analysis")
     },
     {
       name: "Audit",
-      icon: <IconAudit className="w-5 h-5" />,
-      onClick: () => console.log("Audit clicked")
+      icon: <RiCheckboxMultipleLine className="w-4 h-4" />,
+      onClick: () => setActiveTab("Audit")
     },
     {
       name: "Compile",
-      icon: <IconCode className="w-5 h-5" />,
-      onClick: () => console.log("Compile clicked")
+      icon: <RiCodeSSlashLine className="w-4 h-4" />,
+      onClick: () => setActiveTab("Compile")
     },
     {
       name: "Download",
-      icon: <IconDownload className="w-5 h-5" />,
-      onClick: () => console.log("Download clicked")
+      icon: <RiDownloadLine className="w-4 h-4" />,
+      onClick: () => setActiveTab("Download")
     },
     {
       name: "Editor",
-      icon: <IconEdit className="w-5 h-5" />,
-      onClick: () => console.log("Editor clicked")
+      icon: <RiEditLine className="w-4 h-4" />,
+      onClick: () => setActiveTab("Editor")
     },
     {
       name: "Preview",
-      icon: <IconEye className="w-5 h-5" />,
-      onClick: () => console.log("Preview clicked")
+      icon: <RiEyeLine className="w-4 h-4" />,
+      onClick: () => setActiveTab("Preview")
     },
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="sticky top-24 z-40 w-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
-        <div className="flex items-center justify-center px-4 py-3 space-x-4">
-          {ideNavItems.map((item, index) => (
-            <button
-              key={index}
-              onClick={item.onClick}
-              className="flex items-center space-x-2 px-4 py-2 rounded-lg 
-                       text-gray-600 dark:text-gray-300 
-                       hover:bg-gray-100 dark:hover:bg-gray-700 
-                       transition-colors duration-200"
-            >
-              {item.icon}
-              <span className="text-sm font-medium">{item.name}</span>
-            </button>
-          ))}
+    <div className="min-h-screen bg-gray-900">
+      <div className="sticky top-28 z-40 flex justify-center">
+        <div className="w-fit bg-gray-800/95 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-lg">
+          <div className="flex items-center gap-1 px-2 py-2">
+            {ideNavItems.map((item, index) => (
+              <button
+                key={index}
+                onClick={item.onClick}
+                className={`
+                  relative flex items-center gap-2 px-3 py-2 rounded-lg
+                  text-sm font-medium transition-all duration-200
+                  ${activeTab === item.name 
+                    ? 'text-white bg-gray-700/50' 
+                    : 'text-gray-400 hover:text-gray-200 hover:bg-gray-700/30'}
+                `}
+              >
+                {item.icon}
+                <span>{item.name}</span>
+                {activeTab === item.name && (
+                  <div className="absolute inset-0 rounded-lg bg-white/5 animate-fadeIn" />
+                )}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
-      {children}
+      <div className="mt-8">
+        {children}
+      </div>
     </div>
   )
 }
 
-export default layout
+export default Layout

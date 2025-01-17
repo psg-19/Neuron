@@ -71,7 +71,7 @@ export function ModernFooter() {
         {/* Bottom Footer Bar */}
         <div className="border-t border-neutral-800 pt-4 flex flex-col sm:flex-row items-center justify-between">
           <p className="text-xs text-neutral-500 mb-4 sm:mb-0">
-            © {new Date().getFullYear()} Arc. All rights reserved.
+            © {new Date().getFullYear()} Neuron. All rights reserved.
           </p>
           <div className="flex space-x-4">
             <a

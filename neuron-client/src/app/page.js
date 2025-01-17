@@ -1,10 +1,10 @@
 import React from 'react'
-import { Spotlight } from '../components/ui/Spotlight'
-import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
-import { FeaturesSectionDemo } from '../components/ui/FeaturesSectionDemo';
-import { SmartContractsMarquee } from '../components/SmartContractsMarquee';
-import { EndToEndToolsSection } from '../components/EndToEndToolsSection';
-import { ModernFooter } from '../components/Footer';
+import { Spotlight } from './components/ui/Spotlight'
+import { TypewriterEffectSmooth } from "./components/ui/typewriter-effect";
+import { FeaturesSectionDemo } from './components/ui/FeaturesSectionDemo';
+import { SmartContractsMarquee } from './components/SmartContractsMarquee';
+import { EndToEndToolsSection } from './components/EndToEndToolsSection';
+import { ModernFooter } from './components/Footer';
 
 
 const words = [

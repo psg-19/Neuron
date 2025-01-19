@@ -26,7 +26,7 @@ import {
   InputAdornment
 } from "@mui/material";
 import { formatEther } from "viem";
-import { 
+import {
   InsertDriveFile as InsertDriveFileIcon,
   Search as SearchIcon,
   AccountBalanceWallet as WalletIcon,
@@ -71,7 +71,7 @@ const ReadMarketplace = () => {
     }
     return configs;
   };
-  
+
   const { data: contractsData } = useReadContracts({
     contracts: getContractConfigs(),
   });
@@ -119,7 +119,7 @@ const ReadMarketplace = () => {
   const handleDownload = async (tokenURI, id, price) => {
     try {
       setNotification({ open: true, message: "Processing your purchase...", severity: "info" });
-      
+
       const tx = await writeContract({
         abi: ABI,
         address: contractAddress,
@@ -127,7 +127,7 @@ const ReadMarketplace = () => {
         args: [id],
         value: price
       });
-      
+
       setNotification({ open: true, message: "Purchase successful! Downloading contract...", severity: "success" });
 
       const ipfsUrl = getIpfsUrl(tokenURI);
@@ -181,13 +181,13 @@ const ReadMarketplace = () => {
           <WalletIcon />
         </Toolbar>
       </AppBar>
-      
+
       <Container maxWidth="lg" sx={{ mt: 4, mb: 8 }}>
-        <Paper 
-          elevation={2} 
-          sx={{ 
-            p: 3, 
-            mb: 4, 
+        <Paper
+          elevation={2}
+          sx={{
+            p: 3,
+            mb: 4,
             borderRadius: 2,
             background: 'linear-gradient(to right, #f5f7fa, #e4e7eb)'
           }}
@@ -198,61 +198,73 @@ const ReadMarketplace = () => {
           <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
             Browse and purchase verified smart contracts from developers around the world
           </Typography>
-          
+
           {!loading && (
-            <Paper 
-              elevation={1} 
-              sx={{ 
-                p: 0.5, 
-                display: 'flex', 
-                alignItems: 'center',
-                borderRadius: 2,
-                mb: 2
-              }}
-            >
-              <TextField
-                fullWidth
-                placeholder="Search by tags (e.g., DeFi, NFT, Exchange)"
-                variant="standard"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <SearchIcon color="action" />
-                    </InputAdornment>
-                  ),
-                  endAdornment: searchQuery && (
-                    <InputAdornment position="end">
-                      <IconButton 
-                        edge="end" 
-                        onClick={handleClearSearch}
-                        size="small"
-                      >
-                        <ClearIcon fontSize="small" />
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                  disableUnderline: true,
-                  sx: { 
-                    ml: 1,
-                    fontSize: '1rem',
-                    '& input': { 
-                      py: 1.5,
-                      px: 0.5
-                    }
-                  }
-                }}
-              />
-            </Paper>
+           <Paper
+           elevation={2}
+           sx={{
+             display: 'flex',
+             alignItems: 'center',
+             borderRadius: 3,
+             mb: 2,
+             background: "linear-gradient(145deg, #1E1E1E, #2C2C2C)",
+             boxShadow: "0 2px 6px rgba(0,0,0,0.3)",
+             transition: "transform 0.3s ease, box-shadow 0.3s ease",
+             "&:hover": {
+               transform: "translateY(-2px)",
+               boxShadow: "0 4px 12px rgba(0,0,0,0.4)"
+             }
+           }}
+         >
+           <TextField
+             fullWidth
+             placeholder="Search by tags (e.g., DeFi, NFT, Exchange)"
+             variant="standard"
+             value={searchQuery}
+             onChange={(e) => setSearchQuery(e.target.value)}
+             InputProps={{
+               startAdornment: (
+                 <InputAdornment position="start">
+                   <SearchIcon sx={{ color: "#BDBDBD" }} />
+                 </InputAdornment>
+               ),
+               endAdornment: searchQuery && (
+                 <InputAdornment position="end">
+                   <IconButton
+                     edge="end"
+                     onClick={handleClearSearch}
+                     size="small"
+                     sx={{ color: "#BDBDBD" }}
+                   >
+                     <ClearIcon fontSize="small" />
+                   </IconButton>
+                 </InputAdornment>
+               ),
+               disableUnderline: true,
+               sx: {
+                 color: "#ECECEC",
+                 ml: 1,
+                 fontSize: '1rem',
+                 '& input::placeholder': {
+                   color: '#BDBDBD'
+                 },
+                 '& input': {
+                   py: 1.5,
+                   px: 0.5
+                 }
+               }
+             }}
+           />
+         </Paper>
+         
           )}
-          
+
           {searchQuery && (
             <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
               <Typography variant="body2" color="text.secondary">
                 Showing results for:
               </Typography>
-              <Chip 
+              <Chip
                 label={searchQuery}
                 onDelete={handleClearSearch}
                 color="primary"
@@ -288,90 +300,121 @@ const ReadMarketplace = () => {
               <Grid container spacing={3}>
                 {filteredContracts.map(({ tokenId, creator, tags, usageFee, tokenURI }) => (
                   <Grid item xs={12} sm={6} md={4} key={tokenId}>
-                    <Card 
-                      elevation={2} 
-                      sx={{ 
-                        borderRadius: 2, 
-                        height: "100%",
-                        transition: "all 0.3s ease",
+                    <Card
+                      elevation={4}
+                      sx={{
+                        p: 2,
+                        background: "linear-gradient(145deg, #1E1E1E, #2C2C2C)",
+                        color: "#ECECEC",
+                        borderRadius: 3,
+                        boxShadow: "0 2px 10px rgba(0,0,0,0.3)",
+                        transition: "transform 0.3s ease, box-shadow 0.3s ease",
                         "&:hover": {
                           transform: "translateY(-4px)",
-                          boxShadow: 6
+                          boxShadow: "0 5px 15px rgba(0,0,0,0.4)"
                         }
                       }}
                     >
                       <CardContent>
                         <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                          <Avatar sx={{ bgcolor: "primary.main", mr: 1 }}>
+                          <Avatar
+                            sx={{
+                              mr: 1,
+                              backgroundColor: "rgba(255,255,255,0.1)",
+                              color: "#fff"
+                            }}
+                          >
                             <CodeIcon />
                           </Avatar>
-                          <Typography variant="h6">Contract #{tokenId}</Typography>
+                          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                            Contract #{tokenId}
+                          </Typography>
                         </Box>
-                        
-                        <Divider sx={{ mb: 2 }} />
-                        
+
+                        <Divider sx={{ mb: 2, borderColor: "rgba(255,255,255,0.12)" }} />
+
                         <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
-                          <PersonIcon color="action" sx={{ mr: 1 }} />
-                          <Typography variant="body2" color="text.secondary">
+                          <PersonIcon sx={{ mr: 1, color: "#BDBDBD" }} />
+                          <Typography variant="body2" sx={{ color: "#BDBDBD", mr: 0.5 }}>
                             Created by:
                           </Typography>
                           <Tooltip title={creator}>
-                            <Typography variant="body2" sx={{ ml: 0.5, fontWeight: "medium" }}>
+                            <Typography variant="body2" sx={{ fontWeight: 500 }}>
                               {truncateAddress(creator)}
                             </Typography>
                           </Tooltip>
                         </Box>
-                        
+
                         <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                          <WalletIcon color="action" sx={{ mr: 1 }} />
-                          <Typography variant="body2" color="text.secondary">
+                          <WalletIcon sx={{ mr: 1, color: "#BDBDBD" }} />
+                          <Typography variant="body2" sx={{ color: "#BDBDBD" }}>
                             Usage Fee:
                           </Typography>
-                          <Typography variant="body1" color="primary" sx={{ ml: 0.5, fontWeight: "bold" }}>
+                          <Typography
+                            variant="body1"
+                            sx={{
+                              ml: 0.5,
+                              fontWeight: "bold",
+                              color: "#90CAF9"
+                            }}
+                          >
                             {formatEther(usageFee.toString())} ETH
                           </Typography>
                         </Box>
-                        
+
                         <Box sx={{ mb: 2 }}>
                           <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                            <TagIcon color="action" sx={{ mr: 1 }} />
-                            <Typography variant="body2" color="text.secondary">
+                            <TagIcon sx={{ mr: 1, color: "#BDBDBD" }} />
+                            <Typography variant="body2" sx={{ color: "#BDBDBD" }}>
                               Tags:
                             </Typography>
                           </Box>
                           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
                             {tags.map((tag, index) => (
-                              <Chip 
-                                key={index} 
-                                label={tag} 
-                                size="small" 
+                              <Chip
+                                key={index}
+                                label={tag}
+                                size="small"
                                 variant="outlined"
                                 onClick={() => setSearchQuery(tag)}
-                                sx={{ 
-                                  bgcolor: "rgba(0,0,0,0.03)",
-                                  cursor: "pointer"
+                                sx={{
+                                  cursor: "pointer",
+                                  borderColor: "rgba(255,255,255,0.2)",
+                                  color: "#ECECEC",
+                                  backgroundColor: "rgba(255,255,255,0.06)",
+                                  "&:hover": {
+                                    backgroundColor: "rgba(255,255,255,0.12)"
+                                  }
                                 }}
                               />
                             ))}
                           </Box>
                         </Box>
-                        
+
                         <Button
                           variant="contained"
-                          color="primary"
                           fullWidth
                           startIcon={<InsertDriveFileIcon />}
                           onClick={() => tokenURI && handleDownload(tokenURI, tokenId, usageFee)}
-                          sx={{ 
+                          sx={{
                             mt: 1,
                             textTransform: "none",
-                            borderRadius: 1.5
+                            borderRadius: 1.5,
+                            backgroundColor: "#90CAF9",
+                            color: "#0D0D0D",
+                            fontWeight: "bold",
+                            boxShadow: "none",
+                            "&:hover": {
+                              backgroundColor: "#64B5F6",
+                              boxShadow: "0 3px 10px rgba(144,202,249,0.3)"
+                            }
                           }}
                         >
                           Purchase & Download
                         </Button>
                       </CardContent>
                     </Card>
+
                   </Grid>
                 ))}
               </Grid>
@@ -383,8 +426,8 @@ const ReadMarketplace = () => {
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
                   Try using different keywords or browse all available contracts
                 </Typography>
-                <Button 
-                  variant="outlined" 
+                <Button
+                  variant="outlined"
                   onClick={handleClearSearch}
                   startIcon={<ClearIcon />}
                 >
@@ -395,16 +438,16 @@ const ReadMarketplace = () => {
           </>
         )}
       </Container>
-      
-      <Snackbar 
-        open={notification.open} 
-        autoHideDuration={6000} 
+
+      <Snackbar
+        open={notification.open}
+        autoHideDuration={6000}
         onClose={handleCloseNotification}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       >
-        <Alert 
-          onClose={handleCloseNotification} 
-          severity={notification.severity} 
+        <Alert
+          onClose={handleCloseNotification}
+          severity={notification.severity}
           variant="filled"
           sx={{ width: '100%' }}
         >

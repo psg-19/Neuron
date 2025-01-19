@@ -5,7 +5,8 @@ import { FeaturesSectionDemo } from './components/ui/FeaturesSectionDemo';
 import { SmartContractsMarquee } from './components/SmartContractsMarquee';
 import { EndToEndToolsSection } from './components/EndToEndToolsSection';
 import { ModernFooter } from './components/Footer';
-import { TailwindcssButton } from './components/button';
+import { TailwindcssButton } from './components/buttons';
+
 
 
 const words = [
@@ -30,11 +31,7 @@ const words = [
 const page = () => {
   return (
     <main className="min-h-screen overflow-hidden bg-black/[0.96] antialiased bg-grid-white/[0.02]">
-      {/* The spotlight effect */}
-      <Spotlight
-        className="-top-40 left-0 md:left-60 md:-top-20"
-        fill="white"
-      />
+
 
       {/* Your existing floating nav */}
 
@@ -48,8 +45,8 @@ const page = () => {
             contracts effortlessly with AI-driven tools and one-click deployment to
             Kiichain’s testnet.
           </p>
-          
-    <TailwindcssButton />
+          <TailwindcssButton />
+    
         </div>
       </section>
       <FeaturesSectionDemo />

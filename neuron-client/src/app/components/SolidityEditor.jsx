@@ -282,8 +282,59 @@ contract MyContract {
 
   }
   const getVulnerabilityReport = async () => {
-
-  }
+    try {
+      const prompt = `Analyze this Solidity smart contract for security vulnerabilities, potential issues, and best practices. Provide a clear, concise report highlighting main security concerns, gas optimizations, and recommendations. Focus on:
+      1. Critical vulnerabilities
+      2. Gas optimization opportunities
+      3. Code quality issues
+      4. Best practices violations
+      
+      Contract code:
+      ${code}`;
+  
+      const response = await axios({
+        url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyCHK_9m7dwti-kYYWmr-ciR-Kp9_QTgvOc",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: {
+          contents: [
+            {
+              parts: [{ text: prompt }],
+            },
+          ],
+        },
+      });
+  
+      // Extract the report text from response
+      const reportText = response.data.candidates[0].content.parts[0].text;
+  
+      // Format the report with proper spacing and structure
+      const formattedReport = `SMART CONTRACT SECURITY AUDIT REPORT
+  Date: ${new Date().toLocaleDateString()}
+  
+  ${reportText}
+  
+  Generated using Gemini 1.5
+  `;
+  
+      // Create and download the report file
+      const blob = new Blob([formattedReport], { type: 'text/plain' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'vulnerability-report.txt';
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+  
+    } catch (error) {
+      console.error("Error generating vulnerability report:", error);
+      alert("Failed to generate vulnerability report. Please try again.");
+    }
+  };
   const copyToClipboard = (text) => {
 
   }

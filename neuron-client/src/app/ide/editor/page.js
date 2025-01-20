@@ -7,9 +7,7 @@ export default function EditorPage() {
 
   return (
     <div className="h-[calc(100vh-12rem)]">
-      hello
-  
-    
+
     </div>
   )
 }

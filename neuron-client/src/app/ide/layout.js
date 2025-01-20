@@ -9,6 +9,7 @@ import {
   RiEditLine, 
   RiEyeLine
 } from 'react-icons/ri'
+import SolidityEditor from '../components/SolidityEditor'
 
 const Layout = ({ children }) => {
   const router = useRouter()
@@ -111,6 +112,9 @@ const Layout = ({ children }) => {
       <div className="mt-6 mx-auto max-w-7xl px-4">
         <div className="bg-gray-800 border border-gray-700/50 rounded-xl p-6">
           {children}
+          <div className="h-[calc(100vh-12rem)] mt-[50px]">
+      <SolidityEditor/>
+    </div>
         </div>
       </div>
     </div>

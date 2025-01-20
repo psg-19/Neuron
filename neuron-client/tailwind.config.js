@@ -18,6 +18,21 @@ export default {
 theme: {
   extend: {
     animation: {
+      gradient: 'gradient 4s ease-in-out infinite',
+    },
+    keyframes: {
+      gradient: {
+        '0%, 100%': {
+          'background-size': '200% 200%',
+          'background-position': 'left center'
+        },
+        '50%': {
+          'background-size': '200% 200%',
+          'background-position': 'right center'
+        },
+      },
+    },
+    animation: {
       move: "move 5s linear infinite",
       scroll:
         "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",

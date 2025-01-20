@@ -6,6 +6,7 @@ import { useDeployContract, useSwitchChain, useAccount, usePublicClient } from "
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import { resolveQuery } from "../ai/chat";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const SolidityEditor = () => {
   const { deployContract } = useDeployContract();
@@ -276,6 +277,22 @@ contract MyContract {
       return <div className="text-red-500">Error loading functions</div>;
     }
   };
+  const getTestnet = async () => {
+    await switchChain({ chainId: 57054 });
+
+  }
+  const getVulnerabilityReport = async () => {
+
+  }
+  const copyToClipboard = (text) => {
+
+  }
+  const downloadStandalone = async () => {
+
+  }
+  const highlightErrors=async()=>{
+    
+  }
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6">
@@ -295,6 +312,18 @@ contract MyContract {
         <button className="bg-red-500 px-4 py-2 rounded text-white font-bold hover:bg-green-400" onClick={foundryDownload}>
           Foundry-D
         </button>
+        <ConnectButton/>
+        <button className="bg-orange-500 px-4 py-2 rounded text-white font-bold hover:bg-green-400" onClick={getTestnet}>
+          Testnet
+        </button>
+        <button className="bg-orange-500 px-4 py-2 rounded text-white font-bold hover:bg-green-400" onClick={getVulnerabilityReport}>
+        Report
+        </button>
+        <button className="bg-orange-500 px-4 py-2 rounded text-white font-bold hover:bg-green-400" onClick={highlightErrors}>
+        Find Errors
+        </button>
+        
+
       </div>
 
       {/* Solidity Code Editor */}

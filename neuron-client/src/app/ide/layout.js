@@ -112,7 +112,7 @@ const Layout = ({ children }) => {
       <div className="mt-6 mx-auto max-w-7xl px-4">
         <div className="bg-gray-800 border border-gray-700/50 rounded-xl p-6">
           {children}
-          <div className="h-[calc(100vh-12rem)] mt-[50px]">
+          <div className="h-[calc(100vh-12rem)]">
       <SolidityEditor/>
     </div>
         </div>

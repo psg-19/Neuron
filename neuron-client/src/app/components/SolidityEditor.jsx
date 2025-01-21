@@ -41,11 +41,30 @@ contract MyContract {
 }`);
   const [abi, setAbi] = useState("");
   const [bytecode, setBytecode] = useState("");
+  const [files, setFiles] = useState([]);
   const [compilationError, setCompilationError] = useState("");
   const [functionInputs, setFunctionInputs] = useState({}); // New state for function arguments
 
   // Track contract address after deployment
   useEffect(() => {
+    localStorage.setItem("files", JSON.stringify(["temp"]));
+    localStorage.setItem(
+      "temp",
+      JSON.stringify(`// SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.0;
+    
+    contract MyContract {
+        uint256 public myNumber;
+    
+        function setNumber(uint256 _num) public {
+            myNumber = _num;
+        }
+    
+        function getNumber() public view returns (uint256) {
+            return myNumber;
+        }
+    }`)
+    );
     const fetchContractAddress = async () => {
       if (txHash) {
         const receipt = await publicClient.waitForTransactionReceipt({
@@ -54,6 +73,10 @@ contract MyContract {
         setContractAddress(receipt.contractAddress);
       }
     };
+    let storedFiles = JSON.parse(localStorage.getItem("files")) || [];
+    setFiles(storedFiles);
+    setCode(null);
+
     fetchContractAddress();
   }, [txHash, publicClient]); //
 
@@ -362,22 +385,32 @@ contract MyContract {
   const addFile = () => {
     setIsModalOpen(true);
   };
+  const saveFile = () => {
+    localStorage.removeItem(fileName);
+    localStorage.setItem(fileName, JSON.stringify(code));
+  };
+  const changeFile = (file) => {
+    console.log(JSON.parse(localStorage.getItem(file)));
+    setCode(null);
+    setFileName(file);
+    setCode(JSON.parse(localStorage.getItem(file)));
+  };
 
   const handleCreateFile = () => {
     if (fileName.trim()) {
-      const fullFileName = `${fileName}`;
-  
-      // Retrieve existing files array from localStorage
-      const existingFiles = JSON.parse(localStorage.getItem("files")) || [];
-  
-      // Add new file to the array and store it back
-      const updatedFiles = [...existingFiles, fullFileName];
-      localStorage.setItem("files", JSON.stringify(updatedFiles));
-  
-      // Store the code with the filename as key
-      localStorage.setItem(fullFileName, JSON.stringify(code));
-  
-      // Reset modal state
+      const fileKey = `${fileName}`;
+      // Get existing file list
+      let storedFiles = JSON.parse(localStorage.getItem("files")) || [];
+
+      // Add new file if not already present
+      if (!storedFiles.includes(fileKey)) {
+        setFiles(null);
+        storedFiles.push(fileKey);
+        localStorage.setItem("files", JSON.stringify(storedFiles));
+        setFiles(storedFiles); // Update state
+      }
+      localStorage.setItem(fileKey, JSON.stringify(code));
+
       setIsModalOpen(false);
       setFileName("");
     }
@@ -438,44 +471,74 @@ contract MyContract {
         </button>
       </div>
       <Modal
-      title="Enter File Name"
-      open={isModalOpen}
-      onOk={handleCreateFile}
-      onCancel={() => setIsModalOpen(false)}
-    >
-      <Input
-        placeholder="File name"
-        value={fileName}
-        onChange={(e) => setFileName(e.target.value)}
-        addonAfter=".sol"
-      />
-    </Modal>
+        title="Enter File Name"
+        open={isModalOpen}
+        onOk={handleCreateFile}
+        onCancel={() => setIsModalOpen(false)}
+      >
+        <Input
+          placeholder="File name"
+          value={fileName}
+          onChange={(e) => setFileName(e.target.value)}
+          addonAfter=".sol"
+        />
+      </Modal>
       {/* Solidity Code Editor */}
       <div className="flex gap-5">
-        <div className="w-[20%] h-400px bg-gray-800 text-white p-4 rounded-lg shadow-md">
+        <div className="w-[20%] h-[400px] bg-gray-800 text-white p-4 rounded-lg shadow-md flex flex-col">
           <button
-            onClick={() => {
-              addFile();
-            }}
+            className="bg-green-500 text-white py-2 px-4 rounded-md mb-4 hover:bg-green-600"
+            onClick={() => saveFile()}
           >
-            Add file
+            Save File
           </button>
+          <button
+            className="bg-blue-500 text-white py-2 px-4 rounded-md mb-4 hover:bg-blue-600"
+            onClick={() => addFile()}
+          >
+            Add File
+          </button>
+
+          {/* File List */}
+          <div className="flex flex-col gap-2 overflow-y-auto">
+            {files && files.length > 0 ? (
+              files.map((file, index) => (
+                <div
+                  key={index}
+                  className={`bg-gray-700 ${
+                    fileName == file ? "bg-green-700" : "bg-gray-700"
+                  } p-2 rounded-md cursor-pointer `}
+                  onClick={() => {
+                    changeFile(file);
+                  }}
+                >
+                  {file}.sol
+                </div>
+              ))
+            ) : (
+              <p className="text-gray-400">No files added</p>
+            )}
+          </div>
         </div>
-        <Editor
-          height="400px"
-          width="80%"
-          theme="vs-dark"
-          defaultLanguage="solidity"
-          defaultValue={code}
-          onChange={handleEditorChange}
-          options={{
-            fontSize: 14,
-            minimap: { enabled: false },
-            wordWrap: "on",
-            lineNumbers: "on",
-            automaticLayout: true,
-          }}
-        />
+
+        {code && (
+          <Editor
+            height="400px"
+            width="80%"
+            theme="vs-dark"
+            defaultLanguage="solidity"
+            defaultValue={code}
+            value={code}
+            onChange={handleEditorChange}
+            options={{
+              fontSize: 14,
+              minimap: { enabled: false },
+              wordWrap: "on",
+              lineNumbers: "on",
+              automaticLayout: true,
+            }}
+          />
+        )}
       </div>
 
       {/* Display Errors */}

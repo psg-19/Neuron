@@ -2,15 +2,17 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useState } from "react";
 import axios from "axios";
-import { useReadContract,useWriteContract } from "wagmi";
+import { useReadContract, useWriteContract } from "wagmi";
 import { ABI, contractAddress } from "../abis/SmartContractMarketplace";
 import { parseEther } from "viem";
-import ReadMarketplace from "../components/ReadMarketplace";
+import { useRouter } from "next/navigation"; // Import useRouter
+
 export default function UploadContractForm() {
   const [tokenURI, setTokenURI] = useState("");
   const [tags, setTags] = useState([]);
   const [customTag, setCustomTag] = useState("");
   const [usageFee, setUsageFee] = useState("");
+  const router = useRouter(); // Initialize useRouter
 
   const predefinedTags = [
     "L1", "L2", "Sidechain", "Rollup", "Plasma", "zk-Rollup", "Optimistic Rollup",
@@ -23,9 +25,10 @@ export default function UploadContractForm() {
     "Oracle", "Chainlink", "IPFS", "Data Storage", "Privacy", "AI on Blockchain"
   ];
 
-  const handleTagSelection = (tag) => {
-    if (!tags.includes(tag)) {
-      setTags([...tags, tag]);
+  const handleTagSelection = (e) => {
+    const selectedTag = e.target.value;
+    if (selectedTag && !tags.includes(selectedTag)) {
+      setTags([...tags, selectedTag]);
     }
   };
 
@@ -40,35 +43,31 @@ export default function UploadContractForm() {
       setCustomTag("");
     }
   };
-  const {writeContract}=useWriteContract()
+
+  const { writeContract } = useWriteContract();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       console.log({
         tokenURI,
         tags,
         usageFee,
       });
-  
-      // Ensure tags are formatted correctly (if passed as an array)
-  
+
       const tx = await writeContract({
-        abi: ABI,  // Ensure ABI is correctly imported
-        address: contractAddress, // Ensure this is correctly set
+        abi: ABI,
+        address: contractAddress,
         functionName: "uploadContract",
-        args: [tokenURI, tags, parseEther(usageFee)], // Convert usageFee to BigInt for blockchain transactions
-      });      
-      // Optionally, wait for confirmation (if using ethers.js)
-      // await tx.wait();
+        args: [tokenURI, tags, parseEther(usageFee)],
+      });
+
       console.log("Transaction confirmed!");
-  
     } catch (error) {
       console.error("Error uploading contract:", error);
     }
   };
-  
 
   const uploadToIpfs = async (e) => {
     e.preventDefault();
@@ -89,7 +88,7 @@ export default function UploadContractForm() {
           }
         );
         setTokenURI(`https://ipfs.io/ipfs/${res.data.IpfsHash}`);
-        console.log(tokenURI)
+        console.log(tokenURI);
       } catch (error) {
         console.error("Error uploading file:", error);
       }
@@ -97,42 +96,60 @@ export default function UploadContractForm() {
   };
 
   return (
-    <div className="max-w-lg mx-auto bg-white p-8 mt-10 rounded-lg shadow-lg border border-gray-200">
+    <div className="max-w-lg mx-auto bg-gray-900 p-8 mt-40 rounded-lg shadow-lg border border-gray-700">
+      {/* Back Button */}
+      <button
+        onClick={() => router.push("/marketplace/view")} // Navigate to /marketplace/view
+        className="mb-6 text-gray-300 hover:text-white transition flex items-center"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 mr-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+        Back to Marketplace
+      </button>
 
-      <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Upload Smart Contract</h2>
-      
+      <h2 className="text-3xl font-bold text-center mb-6 text-white">Upload Smart Contract</h2>
+
       <div className="flex justify-center mb-6">
         <ConnectButton />
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block text-gray-700 font-medium mb-2">Smart Contract File</label>
+          <label className="block text-gray-300 font-medium mb-2">Smart Contract File</label>
           <input
             type="file"
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 text-white"
             onChange={uploadToIpfs}
             required
           />
         </div>
 
-        {/* Predefined Tags */}
+        {/* Predefined Tags Dropdown */}
         <div>
-          <label className="block text-gray-700 font-medium mb-2">Select Tags</label>
-          <div className="grid grid-cols-3 gap-2">
+          <label className="block text-gray-300 font-medium mb-2">Select Tags</label>
+          <select
+            onChange={handleTagSelection}
+            className="w-full p-3 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 text-white"
+          >
+            <option value="">Select a tag</option>
             {predefinedTags.map((tag) => (
-              <button
-                key={tag}
-                type="button"
-                className={`px-3 py-1 rounded-full text-sm ${
-                  tags.includes(tag) ? "bg-blue-600 text-white" : "bg-gray-200"
-                }`}
-                onClick={() => handleTagSelection(tag)}
-              >
+              <option key={tag} value={tag}>
                 {tag}
-              </button>
+              </option>
             ))}
-          </div>
+          </select>
         </div>
 
         {/* Display Selected Tags */}
@@ -152,18 +169,18 @@ export default function UploadContractForm() {
 
         {/* Custom Tag Input */}
         <div>
-          <label className="block text-gray-700 font-medium mb-2">Add Custom Tag</label>
+          <label className="block text-gray-300 font-medium mb-2">Add Custom Tag</label>
           <div className="flex">
             <input
               type="text"
-              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 text-white"
               value={customTag}
               onChange={(e) => setCustomTag(e.target.value)}
               placeholder="Enter a custom tag"
             />
             <button
               type="button"
-              className="ml-2 px-4 py-2 bg-green-500 text-white rounded-lg"
+              className="ml-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
               onClick={handleAddCustomTag}
             >
               Add
@@ -173,10 +190,10 @@ export default function UploadContractForm() {
 
         {/* Usage Fee */}
         <div>
-          <label className="block text-gray-700 font-medium mb-2">Usage Fee (in Wei)</label>
+          <label className="block text-gray-300 font-medium mb-2">Usage Fee (in Wei)</label>
           <input
             type="number"
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 text-white"
             value={usageFee}
             step="any"
             onChange={(e) => setUsageFee(e.target.value)}

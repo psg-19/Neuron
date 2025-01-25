@@ -35,6 +35,7 @@ import {
   Person as PersonIcon,
   Clear as ClearIcon
 } from "@mui/icons-material";
+import { useRouter } from 'next/navigation';
 
 const ReadMarketplace = () => {
   const [contracts, setContracts] = useState([]);
@@ -42,6 +43,7 @@ const ReadMarketplace = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [notification, setNotification] = useState({ open: false, message: "", severity: "info" });
   const { writeContract } = useWriteContract();
+  const router = useRouter();
 
   // Fetch total number of token IDs
   const { data: totalTokens } = useReadContract({
@@ -171,16 +173,9 @@ const ReadMarketplace = () => {
   };
 
   return (
-    <>
-      <AppBar position="static" color="primary" elevation={0}>
-        <Toolbar>
-          <CodeIcon sx={{ mr: 2 }} />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Smart Contracts Marketplace
-          </Typography>
-          <WalletIcon />
-        </Toolbar>
-      </AppBar>
+    <div className="mt-40"
+    >
+    
 
       <Container maxWidth="lg" sx={{ mt: 4, mb: 8 }}>
         <Paper
@@ -192,13 +187,34 @@ const ReadMarketplace = () => {
             background: 'linear-gradient(to right, #f5f7fa, #e4e7eb)'
           }}
         >
-          <Typography variant="h4" gutterBottom sx={{ fontWeight: "medium" }}>
-            Discover Smart Contracts
-          </Typography>
-          <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-            Browse and purchase verified smart contracts from developers around the world
-          </Typography>
-
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
+            <div>
+              <Typography variant="h4" gutterBottom sx={{ fontWeight: "medium" }}>
+                Discover Smart Contracts
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                Browse and purchase verified smart contracts from developers around the world
+              </Typography>
+            </div>
+            <Button
+              variant="contained"
+              onClick={() => router.push('/marketplace')}
+              sx={{
+                backgroundColor: '#90CAF9',
+                color: '#0D0D0D',
+                fontWeight: 'bold',
+                borderRadius: 2,
+                padding: '10px 20px',
+                textTransform: 'none',
+                '&:hover': {
+                  backgroundColor: '#64B5F6',
+                  boxShadow: '0 3px 10px rgba(144,202,249,0.3)'
+                }
+              }}
+            >
+              Create Contract
+            </Button>
+          </Box>
           {!loading && (
            <Paper
            elevation={2}
@@ -454,7 +470,7 @@ const ReadMarketplace = () => {
           {notification.message}
         </Alert>
       </Snackbar>
-    </>
+    </div>
   );
 };
 

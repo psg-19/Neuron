@@ -25,6 +25,11 @@ export function FloatingNavDemo() {
       link: "/ide",
       icon: <IconCode className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
+    {
+      name: "Marketplace",
+      link: "/marketplace/view",
+      icon: <IconCode className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
   ];
 
   return (

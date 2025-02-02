@@ -67,9 +67,9 @@ export default function AboutPage() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Meet the Team</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            { name: "Raj Rakshit", role: "Web3 Developer", img: "/team/raj.jpg" },
-            { name: "Akshat Bhansali", role: "Lead Developer", img: "/team/michael.jpg" },
-            { name: "Rohan Prakash", role: "Web Developer", img: "/team/sarah.jpg" },
+            { name: "Pratush Shyam Gupt", role: "Web3 Developer", img: "/team/pratush.jpg" },
+            { name: "Ashwini Singh", role: "Web Developer", img: "/team/ashwini.jpg" },
+            { name: "Adarsh Verma", role: "Web Developer", img: "/team/adarsh.jpg" },
           ].map((member, idx) => (
             <motion.div
               key={idx}

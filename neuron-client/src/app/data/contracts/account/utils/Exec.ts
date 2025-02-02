@@ -114,10 +114,10 @@ const definition: any = {
         ],
       },
     ],
-    read: [] as IContractFunction[],
+    read: [] ,
   },
-  events: [] as IContractEvent[],
-  extensions: [] as IContractExtension[],
+  events: [] ,
+  extensions: [] ,
   license: "MIT",
 }
 

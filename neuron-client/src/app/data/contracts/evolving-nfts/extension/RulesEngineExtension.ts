@@ -107,7 +107,7 @@ const definition: any = {
         { name: "action", type: "bytes" },
         { name: "context", type: "bytes" },
       ],
-      content: [] as IRichText[],
+      content: []  ,
     },
     {
       function: "RuleEvaluated",
@@ -116,10 +116,10 @@ const definition: any = {
         { name: "ruleId", type: "string" },
         { name: "result", type: "bool" },
       ],
-      content: [] as IRichText[],
+      content: []  ,
     },
   ],
-  extensions: [] as IContractExtension[],
+  extensions: []  ,
   license: "MIT",
 
   resources: [

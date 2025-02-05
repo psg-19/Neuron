@@ -183,7 +183,7 @@ const definition: any = {
       content: [],
     },
   ],
-  resources: [] as IAnchor[] | [],
+  resources: [],
   extensions: [],
   license: "MIT",
 }

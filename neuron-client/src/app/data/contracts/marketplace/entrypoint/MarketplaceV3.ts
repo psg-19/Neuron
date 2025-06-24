@@ -183,7 +183,7 @@ const definition: any = {
       content: [{ tag: "p", content: "Earnings have been withdrawn from the contract.", style: {} }],
     },
   ],
-  resources: [] as IAnchor[] | [],
+  resources: [],
   extensions: [],
   license: "MIT",
 }
